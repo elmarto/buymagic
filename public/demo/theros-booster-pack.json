@@ -1,0 +1,13 @@
+{
+    "name":"Theros Booster Pack",
+    "id":"theros-booster-pack",
+    "theme":"Theros",
+    "type":"Booster Pack",
+    "summary":"Boosters de Theros",
+    "imageUrl":"http://www.themagictutor.com/ventas/boosters/theros_box_s.gif",
+    "price":{
+        "1":61,
+        "16":59,
+        "36":56
+    }
+}

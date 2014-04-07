@@ -1,0 +1,24 @@
+
+
+
+.main section{
+	width: 100%;
+	border:none;
+}
+
+.main section, .main section .description, .main section .image, .main section .price  {
+	-webkit-transition:0.5s;  
+    -moz-transition:0.5s;  
+    -o-transition:0.5s;  
+    transition: 0.5s;  
+}
+
+.main aside{
+	width: 100%;
+	float:none;
+	padding:0;
+}
+
+.resumeTable{
+	font-size:13px;
+}

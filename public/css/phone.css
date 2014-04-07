@@ -1,0 +1,63 @@
+
+.wrapper{
+ 	width:auto;
+}
+header {
+    padding: 2px;
+}
+.main section{
+    float:left;
+    width:100%;
+    margin:5px 0;
+    border-right: none;
+}
+
+.main section article{
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 50%, #f0f0f0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(50%,#ffffff), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #ffffff 50%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #ffffff 50%,#f0f0f0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #ffffff 50%,#f0f0f0 100%); /* IE10+ */
+	background: linear-gradient(top, #ffffff 50%,#f0f0f0 100%); /* W3C */  
+	
+	margin:5px;
+	border-radius:10px;
+}
+.main section article .block{
+	display:block;
+}
+.main section article .description{
+	text-overflow:ellipsis;
+	min-width: 1px;
+	max-width: none;
+	float:left;
+	width:100%;
+	margin-top: 10px;
+}
+
+
+
+.main section article .image{
+	float:left;
+	width:50%;
+	height:100px;
+	margin:0;
+	padding:0;
+}
+
+.main section article .price{
+	float:right;
+	margin:0;
+	padding:0;
+	width:50%;
+	max-width:none;
+}
+.main section article .price .add{
+	padding:10px;
+	
+}
+
+.resumeTable{
+	font-size:11px;
+}
