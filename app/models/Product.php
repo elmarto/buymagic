@@ -1,7 +1,12 @@
 <?php
 
 class Product extends Eloquent {
-	protected $fillable = array('name', 'summary'); 
+	protected $table = "products";
+	protected $fillable = array('name', 'type', 'summary');
+
+	public function countProducts(){
+		return $this->hasMany('Products');
+	}
 }
 
 

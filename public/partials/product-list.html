@@ -1,13 +1,13 @@
 <section id="product-container" class="product-list">
 	<article ng-repeat="product in products | filter:query">
-		<a href="#/products/{{product.id}}">
-			<h3>{{product.theme}} - {{product.type}}</h3>
+		<a href="#/products/{{product.codename}}">
+			<h3><span class="product-name">{{product.name}}</span><span class="product-type">{{product.type}}</span></h3>
 
 			<div class="block image" style="background-image:url('{{product.imageUrl}}');" ></div>
 		</a>
 		<div class="block price">
 
-			<p class="priceTitle">Precio Unidad</p>
+			<p class="price-title">Precio Unidad</p>
 			<table>
 				<tbody>
 					<tr><td>  1+</td><td>${{product.price.1}}</td></tr>

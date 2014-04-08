@@ -1,9 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:400,800);
+
   *{
     margin:0;
     padding:0;
   }
+  html{
+    height:100%;
+  }
   body{
-   background: #FAFAFA; /* Old browsers */
+    background: #FAFAFA; /* Old browsers */
     background: -moz-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(radial, top left, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
     background: -webkit-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -11,12 +16,14 @@
     background: -ms-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
     background: radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
     background-repeat:no-repeat;
+    height:100%;
   }
 
   #wrapper{
     color:#333;
     margin: 0 auto;
     padding:0 5px 5px 5px;
+    max-width: 1280px;
   }
   .lt-ie9 #wrapper{
 	min-width:774px;
@@ -93,7 +100,17 @@
     transition: 0.5s;  
   }
 
-
+  .main section .button-back{
+    border: 1px solid #AAA;
+    padding: 5px;
+    border-radius: 2px;
+    color: #666;
+    background: #EEE;
+    cursor: pointer;
+    margin: 5px;
+    text-decoration: none;
+    display:inline-block;
+  }
   .main section article{
     /*border-bottom:1px solid #ccc;*/
     padding:5px;
@@ -116,6 +133,35 @@
     display: inline-table;
     margin-right: 3%;
   }
+
+  .main section article a{
+    text-decoration: none;
+    color:none;
+  }
+
+  .main section article a h3 .product-name{
+    font-family: 'Exo';
+    font-size: 30px;
+    color: black;
+  }
+
+  .main section article a[href]:hover h3 .product-name{
+    color:#ed9017;
+  }
+
+  .main section article a h3 .product-type{
+    font-family: 'Exo';
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: lowercase;
+    color:gray;
+    margin-left:5px;
+  }
+
+  .main section article a[href]:hover h3 .product-type{
+    color:#f2bc1d;
+  }
+
   .main section article .description{
     color: #888888;
     float: right;
@@ -126,6 +172,7 @@
     width:50%;
 
   }
+  
   .main section article .description .stock{
     margin:10px 0 0 0;
   }
@@ -142,7 +189,7 @@
     text-align: center;
     font-size:11px;
   }
-  .main section article .priceTitle{
+  .main section article .price-title{
     font-weight:bold;
     text-transform: uppercase;
   }

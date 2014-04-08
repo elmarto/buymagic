@@ -17,3 +17,4 @@ Route::get('/', function()
 });*/
 
 Route::get('/','IndexController@index');
+Route::get('/db/products/{pid?}','ProductListController@get');
