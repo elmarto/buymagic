@@ -2,10 +2,10 @@
 
 class Product extends Eloquent {
 	protected $table = "products";
-	protected $fillable = array('name', 'type', 'summary');
+	public $prices = null;
 
-	public function countProducts(){
-		return $this->hasMany('Products');
+	public function prices(){
+		return $this->hasMany('ProductPrice','pid');
 	}
 }
 

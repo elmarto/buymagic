@@ -1,55 +1,29 @@
-<section id="product-container" class="product-list">
-	<article ng-repeat="product in products | filter:query">
-		<a href="#/products/{{product.codename}}">
-			<h3><span class="product-name">{{product.name}}</span><span class="product-type">{{product.type}}</span></h3>
+<div class="tool-box">
+	<label for="searchbox">Buscar</label>
+	<input type="text" id="searchbox" name="searchbox" placeholder="Booster, Theros, etc" ng-model="query">
+</div>
 
-			<div class="block image" style="background-image:url('{{product.imageUrl}}');" ></div>
-		</a>
-		<div class="block price">
-
-			<p class="price-title">Precio Unidad</p>
-			<table>
-				<tbody>
-					<tr><td>  1+</td><td>${{product.price.1}}</td></tr>
-					<tr><td> 16+</td><td>${{product.price.16}}</td></tr>                    
-					<tr><td> 36&nbsp;&nbsp;</td><td>${{product.price.36}}</td></tr>                    
-				</tbody>
-			</table>
-			<span><input id="quant1" class="quantity" value="1" type="number" /><a data-id="1" class="add">Agregar</a></span>
-
-		</div>
-		<div class="block description">
-			<p>{{product.summary}}</p>
-			<p class="stock now">Entrega inmediata: Stock 36 unidades</p>
-		</div>
-		<div class="clear"></div>
-	</article>
-
-</section>
-<aside>
-	<h3>Buscar</h3>
-	<input type="text" placeholder="Booster, Theros, etc" ng-model="query">
-
-	<h3>Formas de Pago</h3>
-
-	<p><span class="mercadopago"></span></p>
-	<div class="paidmethods">
-		<img src="img/icons/visa.png" alt="VISA" />
-		<img src="img/icons/mastercard.png" alt="mastercard" />
-		<img src="img/icons/amex.png" alt="amex" />
-		<img src="img/icons/naranja.png" alt="naranja" />
-		<img src="img/icons/argencard.png" alt="argencard" />
-		<img src="img/icons/pagofacil.png" alt="pagofacil" />
-		<img src="img/icons/rapipago.png" alt="rapipago" />
-		<img src="img/icons/provincia.png" alt="provincia" />
-		<img src="img/icons/banelco.jpg" alt="banelco" />
-		<img src="img/icons/redlink.png" alt="redlink" />
-		<img src="img/icons/cabal.jpg" alt="cabal" />
+<article ng-repeat="product in products | filter:query">
+	<a class="product-link" href="#/products/{{product.codename}}">
+		<h3><span class="product-name">{{product.name}}</span><span class="product-type">{{product.type}}</span></h3>
+		<div class="block image" style="background-image:url('{{product.imageUrl}}');" ></div>
+	</a>
+	<div class="block price">
+		<p class="price-title" >Precio Unidad</p>
+		<table>
+			<tbody ng-repeat="price in product.prices">
+				<tr><td>  {{price.quantity}}+</td><td>${{price.value}}</td></tr>
+			</tbody>
+		</table>
+		<span ng-controller="CartController">
+			<input class="quantity" id="quantity-{{product.id}}" value="1" min="1" max="99" type="number" />
+			<a data-pid="{{product.id}}" class="add" ng-click="addProductToCart($event)">Agregar</a>
+		</span>
 	</div>
-	<p><span class="paypal"></span></p>
-
-	<h3>Zonas de Envío</h3>
-
-
-</aside>
-<div class="clear"></div>
+	<div class="block description">
+		<p>{{product.summary}}</p>
+		<p>{{product.description}}</p>
+		<p class="stock now">Entrega inmediata: Stock {{product.stock}} unidades</p>
+	</div>
+	<div class="clear"></div>
+</article>

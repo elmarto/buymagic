@@ -24,6 +24,17 @@ header {
 	margin:5px;
 	border-radius:10px;
 }
+
+.main section article a.product-link h3{
+	margin: 10px;
+}
+.main section article a.product-link .product-name,
+.main section article a.product-link .product-type{
+	display:block;
+	text-align: center;
+	line-height: 28px;
+}
+
 .main section article .block{
 	display:block;
 }
@@ -34,6 +45,7 @@ header {
 	float:left;
 	width:100%;
 	margin-top: 10px;
+	text-align: center;
 }
 
 

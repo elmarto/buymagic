@@ -13,7 +13,7 @@ class ProductTableSeeder extends Seeder {
                     'name' => 'Theros',
                     'type' => 'Booster Pack',
                     'description' => 'Much more text',
-                    'summary' => 'First Theros Block',
+                    'summary' => 'Sobre de 15 cartas Magic de la expansión Theros.',
                     'imageUrl' => 'img/products/theros-booster-pack.png',
                     'stock' => 20,
                     'status' => 'a'
@@ -23,7 +23,7 @@ class ProductTableSeeder extends Seeder {
                     'name' => 'Born of the Gods',
                     'type' => 'Booster Pack',
                     'description' => 'Much more text',
-                    'summary' => 'Second Theros Block',
+                    'summary' => 'Sobre de 15 cartas Magic de la expansión Nacidos de los Dioses.',
                     'imageUrl' => 'img/products/born-of-the-gods-booster-pack.png',
                     'stock' => 20,
                     'status' => 'a'

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Exo:400,800);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
 
   *{
     margin:0;
@@ -17,6 +17,7 @@
     background: radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
     background-repeat:no-repeat;
     height:100%;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   #wrapper{
@@ -134,38 +135,42 @@
     margin-right: 3%;
   }
 
-  .main section article a{
+  .main section article a.product-link{
     text-decoration: none;
     color:none;
   }
 
-  .main section article a h3 .product-name{
-    font-family: 'Exo';
-    font-size: 30px;
-    color: black;
+  .main section article a.product-link h3{
+    font-family: 'Ubuntu', sans-serif;
+    margin-left:7px;
   }
 
-  .main section article a[href]:hover h3 .product-name{
+  .main section article a.product-link h3 .product-name{
+    font-size: 30px;
+    color: #666;
+    font-weight: 400;
+  }
+
+  .main section article a.product-link[href]:hover h3 .product-name{
     color:#ed9017;
   }
 
-  .main section article a h3 .product-type{
-    font-family: 'Exo';
-    font-size: 30px;
-    font-weight: 400;
+  .main section article a.product-link h3 .product-type{
+    font-size: 20px;
+    font-weight: 300;
     text-transform: lowercase;
-    color:gray;
+    color:#AAA;
     margin-left:5px;
   }
 
-  .main section article a[href]:hover h3 .product-type{
+  .main section article a.product-link[href]:hover h3 .product-type{
     color:#f2bc1d;
   }
 
   .main section article .description{
     color: #888888;
     float: right;
-    font-size: 11px;
+    font-size: 12px;
     padding: 10px 0;
     min-width: 240px;
     max-width:52%;
@@ -260,37 +265,67 @@
     height:100%;
   }
 
+  .main aside h3{
+    font-family: 'Ubuntu';
+  }
+
   .mercadopago{
-    background-image: url("../img/icons/mercadopago.png");
+    background-image: url("../img/web/mercadopago-logo.png");
     background-repeat: no-repeat;
     background-size: auto 100%;
     display: inline-block;
-    height: 17px;
-    margin: 5px 0;
+    height: 25px;
+    margin: 5px 10px;
     width: 132px;
   }
 
-  .paypal{
-    background-image: url("../img/icons/paypal.png");
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    display: inline-block;
-    height: 17px;
-    margin: 5px 0;
-    width: 132px;
-  }
-  .paidmethods{
+  .payment-methods{
     padding-left:10px;
   }
-  .paidmethods img{
-    max-width:32px;
-    max-height:32px;
-    background-size:100%;
-    background-repeat:no-repeat;
-    background-position:center center;
-    display: inline-block;
 
+  .payment-methods li{
+    background: url("../img/web/mercadopago-methods.png") no-repeat scroll 0 0 transparent;
+    text-indent: -5000px;
+    display: inline-block;
+    min-height: 46px;
+    width: 65px;
+    margin: 0 0 5px;
   }
+  .payment-methods.paypoints li{
+    width: 90px;
+  }
+
+  .payment-methods li.visa{background-position:-25px -33px}
+  .payment-methods li.master{background-position:-37px -134px}
+  .payment-methods li.amex{background-position:-43px -233px}
+  .payment-methods li.hipercard{background-position:-28px -334px}
+  .payment-methods li.melicard{background-position:-39px -434px}
+  .payment-methods li.elo{background-position:-46px -530px}
+  .payment-methods li.bolbradesco{background-position:-40px -630px}
+  .payment-methods li.itau{background-position:-41px -788px}
+  .payment-methods li.diners{background-position:-39px -723px}
+  .payment-methods li.naranja{background-position:-45px -335px}
+  .payment-methods li.tarshop{background-position:-38px -433px}
+  .payment-methods li.cencosud{background-position:-38px -529px}
+  .payment-methods li.cabal{background-position:-45px -629px}
+  .payment-methods li.argencard{background-position:-45px -729px}
+  .payment-methods li.pagofacil{background-position:-44px -835px}
+  .payment-methods li.redlink{background-position:-44px -935px}
+  .payment-methods li.rapipago{background-position:-18px -1028px}
+  .payment-methods li.bapropagos{background-position:-25px -1132px}
+  .payment-methods li.banelco{background-position:-24px -1231px}
+  .payment-methods li.nativa{background-position:-34px -1335px}
+  .payment-methods li.diners{background-position:-46px -1432px}
+  .payment-methods li.venezuela{background-position:-12px -233px}
+  .payment-methods li.provincial{background-position:-9px -328px}
+  .payment-methods li.mercantil{background-position:-13px -435px}
+  .payment-methods li.sivale{background-position:-11px -325px}
+  .payment-methods li.banamex{background-position:-10px -433px}
+  .payment-methods li.bancomer{background-position:-5px -531px}
+  .payment-methods li.serfin{background-position:-6px -630px}
+  .payment-methods li.hsbc{background-position:-6px -722px}
+  .payment-methods li.oxxo{background-position:-26px -816px}
+  .payment-methods li.deposit-and-transfer-icon{background-position:-4px -914px}
 
   .paidmethods .visa{
     background-image:url('../img/icons/visa.png');

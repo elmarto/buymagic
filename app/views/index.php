@@ -32,7 +32,43 @@
 			<div class="logo"><h1>buyMagic</h1></div>
 		</header>
 
-		<div role="main" class="main" ng-view></div>
+		
+		<div role="main" class="main">
+			<section id="product-container" class="product-detail" ng-view></section>
+			<aside>
+				
+				<h3>Formas de Pago</h3>
+
+				<p><span class="mercadopago"></span></p>
+				
+				<ul class="payment-methods card">
+					<li class="visa">Visa <span>12x</span></li>	
+					<li class="master">Mastercard <span>12x</span></li>	
+					<li class="amex">American Express <span>12x</span></li>	
+					<li class="naranja">Naranja <span>12x</span></li>	
+					<li class="nativa">Nativa Mastercard <span>12x</span></li>	
+					<li class="tarshop">Tarjeta Shopping <span>12x</span></li>	
+					<li class="cencosud">Cencosud <span>12x</span></li>	
+					<li class="cabal">Cabal <span>12x</span></li>	
+					<li class="argencard">Argencard <span>12x</span></li>	
+					<li class="diners">Diners <span>12x</span></li>
+				</ul>
+				<ul class="payment-methods paypoints">
+					<li class="rapipago">Rapipago <span>1x</span></li>	
+					<li class="banelco">Banelco <span>1x</span></li>	
+					<li class="bapropagos">Provincia Pagos <span>1x</span></li>
+					<li class="redlink">RedLink <span>1x</span></li>	
+					<li class="pagofacil">Pago Fácil <span>1x</span></li>	
+				</ul>
+
+				<h3>Zonas de Envío</h3>
+
+
+			</aside>
+			<div class="clear"></div>
+		</div>
+
+		
 
 		<footer>
 			Preguntas Frecuentas | Ayuda | Contacto
