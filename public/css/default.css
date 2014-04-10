@@ -241,10 +241,10 @@
     float:left;
     background-size:contain;
     background-repeat:no-repeat;
-	background-position:center;
+	  background-position:center;
     width:20%;
     height:150px;
-    margin:8px
+    margin:8px;
   }
   .main section article .image img{
     max-width:100%;
