@@ -23,9 +23,9 @@
 <body>
 	<!--[if lt IE 7]><p class=chromeframe>¡Tu browser es <em>antiguo</em>! <a href="http://browsehappy.com/">¡Cambialo ahora!</a> o <a href="http://www.google.com/chromeframe/?redirect=true">instala Google Chrome Frame</a> para explorar este sitio.</p><![endif]-->
 	<div id="wrapper">
-		<div class="fixedMenu" id="fixedMenu">
+		<a href="/#cart" class="fixedMenu" id="fixedMenu">
 			<span class="cart-cant" id="cart-cant">0</span>
-		</div>
+		</a>
 		<header>
 			<div class="logo"><h1>buyMagic</h1></div>
 		</header>

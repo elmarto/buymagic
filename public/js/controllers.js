@@ -14,6 +14,12 @@ productcatControllers.controller('ProductDetailCtrl',
 	}]
 );
 
+productcatControllers.controller('CartCtrl', 
+	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+		
+	}]
+);
+
 productcatControllers.controller('CartController', 
 	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
 		/*$http.get('/db/products/'+$routeParams.productId).success(function(data){

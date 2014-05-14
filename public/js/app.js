@@ -14,6 +14,10 @@ productcatApp.config(['$routeProvider',
         templateUrl: 'partials/product-detail.html',
         controller: 'ProductDetailCtrl'
       }).
+      when('/cart', {
+        templateUrl: 'partials/cart.html',
+        controller: 'CartCtrl'
+      }).
       otherwise({
         redirectTo: '/products'
       });
