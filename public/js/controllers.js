@@ -27,16 +27,16 @@ productcatControllers.controller('CartController',
 		});*/
 		$scope.addProductToCart=function(o){
 			$this=$(o.target);
-			var id=$this.data("pid");
-			var quant=parseFloat($("#quantity-"+id).val());
+			var pid=$this.data("pid");
+			var quant=parseFloat($("#quantity-"+pid).val());
 
-			/*$.ajax({
-			  url: 'session.php',
-			  type:'POST',
-			  data: { method:'add', pid: id, quant: quant },
-			  success: function(data) {
-			  }
-			});*/
+			$.ajax({
+				url: '/cart',
+				type:'POST',
+				data: { pid: pid, quantity: quant },
+				success: function(data) {
+				}
+			});
 
 			var product_image_cont = $this.parents('article').find('.block.image');
 			//Effect

@@ -16,5 +16,12 @@ Route::get('/', function()
 	return View::make('hello');
 });*/
 
+//View
 Route::get('/','IndexController@index');
+
+//Database
 Route::get('/db/products/{pid?}','ProductListController@get');
+
+//Cart Routes
+Route::get('/cart','CartController@get');
+Route::post('/cart','CartController@set');
