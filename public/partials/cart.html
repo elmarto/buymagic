@@ -3,24 +3,47 @@
 <article>
 	<div class="cart-preview">
 		<table class="cart-products">
-			<th>
-				<td>ID</td>
-				<td>Producto</td>
-				<td>Cantidad</td>
-				<td>Precio Unidad</td>
-				<td>Precio Total</td>
-			</th>
 			<tr>
-				<td>1</td>
-				<td>Box Magic</td>
-				<td>2</td>
-				<td>$59.99</td>
-				<td>$119.98</td>
+				<th>Nombre del Producto</th>
+				<th>Cantidad</th>
+				<th>Precio Unidad</th>
+				<th>Precio Total</th>
+				<th></th>
+			</tr>
+			<tr ng-repeat="product in products">
+				<td><a class="product-link" href="#/products/{{product.codename}}">{{product.name}} - {{product.type}}</a></td>
+				<td>
+					<input class="quantity" id="quantity-{{product.id}}" data-pid="{{product.id}}" min="1" max="99" type="number" ng-model="product.quantity" ng-blur="updateQuantityPrices(this)"  />
+				</td>
+				<td ng-bind="product.price_unit">${{product.price_unit}}</td>
+				<td ng-model="product.price_quantity">${{product.price_quantity}}</td>
+				<td>Remover</td>
 			</tr>
 		</table>
-		<hr>
-		<h3>SUBTOTAL <span>$119.98</span></h3>
-		<h3>TOTAL <span>$119.98</span></h3>
+		<div class="cart-additionals">
+			<hr>
+
+			<div class="address">
+			</div>
+
+			<table>
+				<tr>
+					<td>SUBTOTAL</td>
+					<td>${{subtotal}}</td>
+				</tr>
+				<tr>
+					<td>Descuentos</td>
+					<td>$0.00</td>
+				</tr>
+				<tr>
+					<td>Envío</td>
+					<td>$0.00</td>
+				</tr>
+			</table>
+			<hr>
+			<h3>TOTAL <span>${{total}}</span></h3>
+		</div>
+		
 	</div>
 	<div class="clear"></div>
 </article>

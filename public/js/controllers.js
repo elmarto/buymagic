@@ -15,7 +15,33 @@ productcatControllers.controller('ProductDetailCtrl',
 );
 
 productcatControllers.controller('CartCtrl', 
-	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+	['$scope', '$http', function($scope, $http) {
+		$http.get('/cart').success(function(cart){
+			$scope.products=cart.products;
+			$scope.subtotal=cart.subtotal;
+			$scope.total=cart.subtotal;
+
+			$scope.updateQuantityPrices=function($event){
+				var pid=$event.product.id;
+				var quant=parseInt($("#quantity-"+pid).val());
+
+				$.ajax({
+					url: '/cart',
+					type:'POST',
+					data: { pid: pid, quantity: quant, action:'set' },
+					success: function(cart) {
+						$scope.$apply(function(){
+							$scope.products=cart.products;
+							$scope.subtotal=cart.subtotal;
+							$scope.total=cart.subtotal;
+						});
+					},
+					error:function(){
+						$("#cart-cant").html(parseFloat($("#cart-cant").html())-quant);
+					}
+				});
+			};
+		});
 		
 	}]
 );
@@ -28,13 +54,16 @@ productcatControllers.controller('CartController',
 		$scope.addProductToCart=function(o){
 			$this=$(o.target);
 			var pid=$this.data("pid");
-			var quant=parseFloat($("#quantity-"+pid).val());
+			var quant=parseInt($("#quantity-"+pid).val());
 
 			$.ajax({
 				url: '/cart',
 				type:'POST',
-				data: { pid: pid, quantity: quant },
+				data: { pid: pid, quantity: quant, action:'add' },
 				success: function(data) {
+				},
+				error:function(){
+					$("#cart-cant").html(parseFloat($("#cart-cant").html())-quant);
 				}
 			});
 

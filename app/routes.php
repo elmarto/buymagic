@@ -25,3 +25,4 @@ Route::get('/db/products/{pid?}','ProductListController@get');
 //Cart Routes
 Route::get('/cart','CartController@get');
 Route::post('/cart','CartController@set');
+Route::get('/cart/flush','CartController@flush');

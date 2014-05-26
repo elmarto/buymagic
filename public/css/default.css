@@ -1,384 +1,446 @@
 @import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,700);
 
-  *{
-    margin:0;
-    padding:0;
-  }
-  html{
-    height:100%;
-  }
-  body{
-    background: #FAFAFA; /* Old browsers */
-    background: -moz-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(radial, top left, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Opera 12+ */
-    background: -ms-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
-    background: radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
-    background-repeat:no-repeat;
-    height:100%;
-    font-family: 'Ubuntu', sans-serif;
-  }
+*{
+	margin:0;
+	padding:0;
+}
+html{
+	height:100%;
+}
+body{
+	background: #FAFAFA; /* Old browsers */
+	background: -moz-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%, rgba(221,221,221,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, top left, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(221,221,221,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* IE10+ */
+	background: radial-gradient(top left, ellipse cover,  rgba(255,255,255,1) 0%,rgba(221,221,221,1) 100%); /* W3C */
+	background-repeat:no-repeat;
+	height:100%;
+	font-family: 'Ubuntu', sans-serif;
+}
 
-  #wrapper{
-    color:#333;
-    margin: 0 auto;
-    padding:0 5px 5px 5px;
-    max-width: 1280px;
-  }
-  .lt-ie9 #wrapper{
+#wrapper{
+	color:#333;
+	margin: 0 auto;
+	padding:0 5px 5px 5px;
+	max-width: 1280px;
+}
+.lt-ie9 #wrapper{
 	min-width:774px;
-  }
-  header{
-    padding: 10px;
+}
+header{
+	padding: 10px;
 	-webkit-transition:0.5s;  
-    -moz-transition:0.5s;  
-    -o-transition:0.5s;  
-    transition: 0.5s;  
-  }
-  header .logo{
-    background-image:url('../img/web/logo.png');
-    width:282px;
-    height:80px;
-    text-indent:-9000px;
-    margin:0 10px 10px 0;
-  }
-  .fixedMenu{
-    background: #f2bc1d; /* Old browsers */
-    background: -moz-linear-gradient(top, #f2bc1d 0%, #ed9017 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2bc1d), color-stop(100%,#ed9017)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* IE10+ */
-    background: linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* W3C */
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0px 1px 2px #888;
-    -moz-box-shadow: 0px 1px 2px #888;
-    -webkit-box-shadow: 0px 1px 2px #888;
-    height: 23px;
-    position: fixed;
-    max-width: 80px;
-    left:50%;
-    margin-left:34%;
-    color:white;
-    padding:5px;
-    cursor:pointer;
+	-moz-transition:0.5s;  
+	-o-transition:0.5s;  
+	transition: 0.5s;  
+}
+header .logo{
+	background-image:url('../img/web/logo.png');
+	width:282px;
+	height:80px;
+	text-indent:-9000px;
+	margin:0 10px 10px 0;
+}
+.fixedMenu{
+	background: #f2bc1d; /* Old browsers */
+	background: -moz-linear-gradient(top, #f2bc1d 0%, #ed9017 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2bc1d), color-stop(100%,#ed9017)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* IE10+ */
+	background: linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* W3C */
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0px 1px 2px #888;
+	-moz-box-shadow: 0px 1px 2px #888;
+	-webkit-box-shadow: 0px 1px 2px #888;
+	height: 23px;
+	position: fixed;
+	max-width: 80px;
+	left:50%;
+	margin-left:34%;
+	color:white;
+	padding:5px;
+	cursor:pointer;
 	webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-  }
-  .fixedMenu .cart-cant{
-    display: block;
-    background: url('../img/web/cart-icon.png') no-repeat;
-    
-    height:21px;
-    background-size: auto 100%;
-    padding-left:26px;
-    text-align:center;
-  }
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+}
+.fixedMenu .cart-cant{
+	display: block;
+	background: url('../img/web/cart-icon.png') no-repeat;
+	
+	height:21px;
+	background-size: auto 100%;
+	padding-left:26px;
+	text-align:center;
+}
 
-  .main{
-    /*background-color: #FFF;
-    -moz-box-shadow: 1px 1px 4px #888;
-    -webkit-box-shadow: 1px 1px 4px #888;
-    box-shadow: 1px 1px 4px #888;
-    border-radius:2px;
-    padding:5px;*/
-    clear: both;
-  }
-  .main section{
-    float:left;
-    width:75%;
-    margin:5px 0;
-    border-right: 1px solid #DDDDDD;
-  }
-  
-  .main section, .main section .description, .main section .image, .main section .price  {
+.main{
+	/*background-color: #FFF;
+	-moz-box-shadow: 1px 1px 4px #888;
+	-webkit-box-shadow: 1px 1px 4px #888;
+	box-shadow: 1px 1px 4px #888;
+	border-radius:2px;
+	padding:5px;*/
+	clear: both;
+}
+.main section{
+	float:left;
+	width:75%;
+	margin:5px 0;
+	border-right: 1px solid #DDDDDD;
+}
+
+.main section, .main section .description, .main section .image, .main section .price  {
 	-webkit-transition:0.5s;  
-    -moz-transition:0.5s;  
-    -o-transition:0.5s;  
-    transition: 0.5s;  
-  }
+	-moz-transition:0.5s;  
+	-o-transition:0.5s;  
+	transition: 0.5s;  
+}
 
-  .main section .button-back{
-    border: 1px solid #AAA;
-    padding: 5px;
-    border-radius: 2px;
-    color: #666;
-    background: #EEE;
-    cursor: pointer;
-    margin: 5px;
-    text-decoration: none;
-    display:inline-block;
-  }
-  .main section article{
-    /*border-bottom:1px solid #ccc;*/
-    padding:5px;
-    margin:5px;
-    border-radius:2px;
-    border:1px solid  #F0F0F0;
-    background: #FFF; /* Old browsers */
-    background: -moz-linear-gradient(left,  #ffffff 50%, #f0f0f0 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(50%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* IE10+ */
-    background: linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* W3C */
-    -moz-box-shadow: 0 0 2px #CCC;
-    -webkit-box-shadow: 0 0 2px #CCC;
-    box-shadow: 0 0 2px #CCC;
-  }
-  
-  .main section article .block{
-    display: inline-table;
-    margin-right: 3%;
-  }
+.main section .button-back{
+	border: 1px solid #AAA;
+	padding: 5px;
+	border-radius: 2px;
+	color: #666;
+	background: #EEE;
+	cursor: pointer;
+	margin: 5px;
+	text-decoration: none;
+	display:inline-block;
+}
+.main section article{
+	/*border-bottom:1px solid #ccc;*/
+	padding:5px;
+	margin:5px;
+	border-radius:2px;
+	border:1px solid  #F0F0F0;
+	background: #FFF; /* Old browsers */
+	background: -moz-linear-gradient(left,  #ffffff 50%, #f0f0f0 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(50%,#ffffff), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* IE10+ */
+	background: linear-gradient(left,  #ffffff 50%,#f0f0f0 100%); /* W3C */
+	-moz-box-shadow: 0 0 2px #CCC;
+	-webkit-box-shadow: 0 0 2px #CCC;
+	box-shadow: 0 0 2px #CCC;
+}
 
-  .main section article a.product-link{
-    text-decoration: none;
-    color:none;
-  }
+.main section article .block{
+	display: inline-table;
+	margin-right: 3%;
+}
 
-  .main section article a.product-link h3{
-    font-family: 'Ubuntu', sans-serif;
-    margin-left:7px;
-  }
+.main section article a.product-link{
+	text-decoration: none;
+	color:none;
+}
 
-  .main section article a.product-link h3 .product-name{
-    font-size: 30px;
-    color: #666;
-    font-weight: 400;
-  }
+.main section article a.product-link h3{
+	font-family: 'Ubuntu', sans-serif;
+	margin-left:7px;
+}
 
-  .main section article a.product-link[href]:hover h3 .product-name{
-    color:#ed9017;
-  }
+.main section article a.product-link h3 .product-name{
+	font-size: 30px;
+	color: #666;
+	font-weight: 400;
+}
 
-  .main section article a.product-link h3 .product-type{
-    font-size: 20px;
-    font-weight: 300;
-    text-transform: lowercase;
-    color:#AAA;
-    margin-left:5px;
-  }
+.main section article a.product-link[href]:hover h3 .product-name{
+	color:#ed9017;
+}
 
-  .main section article a.product-link[href]:hover h3 .product-type{
-    color:#f2bc1d;
-  }
+.main section article a.product-link h3 .product-type{
+	font-size: 20px;
+	font-weight: 300;
+	text-transform: lowercase;
+	color:#AAA;
+	margin-left:5px;
+}
 
-  .main section article .description{
-    color: #888888;
-    float: right;
-    font-size: 12px;
-    padding: 10px 0;
-    min-width: 240px;
-    max-width:52%;
-    width:50%;
+.main section article a.product-link[href]:hover h3 .product-type{
+	color:#f2bc1d;
+}
 
-  }
-  
-  .main section article .description .stock{
-    margin:10px 0 0 0;
-  }
-  .main section article .description .stock.now{
-    color:green;
-  }
-  .main section article .description .stock.notnow{
-    color:red;
-  }
-  .main section article .price{
-    max-width:88px;
+.main section article .description{
+	color: #888888;
+	float: right;
+	font-size: 12px;
+	padding: 10px 0;
+	min-width: 240px;
+	max-width:52%;
+	width:50%;
+
+}
+
+.main section article .description .stock{
+	margin:10px 0 0 0;
+}
+.main section article .description .stock.now{
+	color:green;
+}
+.main section article .description .stock.notnow{
+	color:red;
+}
+.main section article .price{
+	max-width:88px;
 	width:14%;
-    float:right;
-    text-align: center;
-    font-size:11px;
-  }
-  .main section article .price-title{
-    font-weight:bold;
-    text-transform: uppercase;
-  }
-  .main section article .price table{
-    margin: 0 auto;
-  }
-  .main section article .price table tr td{
-    text-align:right;
-    padding:2px;
-  }
-  .main section article .price .add{
-    border:1px solid #AAA;
-    padding:5px;
-    border-radius:2px;
-    color:#666;
-    background:#EEE;
-    cursor:pointer;
-    margin:1px;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  .main section article .price .add:hover{
-    color:white;
-    background:#FF9933;
-    border-color:#CC6600;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-  }
-  .main section article .price .quantity{
-    width:42px;
-    text-align:center;
-    border:1px solid #AAA;
-    border-radius:2px;
-    padding:3px;
-    margin:10px 1px;
-  }
-  .main section article .image{
-    float:left;
-    background-size:contain;
-    background-repeat:no-repeat;
-	  background-position:center;
-    width:20%;
-    height:150px;
-    margin:8px;
-  }
-  .main section article .image img{
-    max-width:100%;
+	float:right;
+	text-align: center;
+	font-size:11px;
+}
+.main section article .price-title{
+	font-weight:bold;
+	text-transform: uppercase;
+}
+.main section article .price table{
+	margin: 0 auto;
+}
+.main section article .price table tr td{
+	text-align:right;
+	padding:2px;
+}
+.main section article .price .add{
+	border:1px solid #AAA;
+	padding:5px;
+	border-radius:2px;
+	color:#666;
+	background:#EEE;
+	cursor:pointer;
+	margin:1px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.main section article .price .add:hover{
+	color:white;
+	background:#FF9933;
+	border-color:#CC6600;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+}
+.main section article .price .quantity{
+	width:42px;
+	text-align:center;
+	border:1px solid #AAA;
+	border-radius:2px;
+	padding:3px;
+	margin:10px 1px;
+}
+.main section article .image{
+	float:left;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+	width:20%;
+	height:150px;
+	margin:8px;
+}
+.main section article .image img{
+	max-width:100%;
 	max-height:100%;
 	display:none;
-  }
-  .lt-ie9 section article .image{
-    background:none !important;
-  }
-  .lt-ie9 section article .image img{
-    display:block;
-  }
-  .main aside{
-    
-    float: right;
-    padding: 3px;
-    width: 24%;
-    height:100%;
-  }
+}
+.lt-ie9 section article .image{
+	background:none !important;
+}
+.lt-ie9 section article .image img{
+	display:block;
+}
 
-  .main aside h3{
-    font-family: 'Ubuntu';
-  }
+.main section article .cart-preview .cart-products{
+	width:100%;
+}
 
-  .mercadopago{
-    background-image: url("../img/web/mercadopago-logo.png");
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    display: inline-block;
-    height: 25px;
-    margin: 5px 10px;
-    width: 132px;
-  }
+.main section article .cart-preview .cart-products tr:nth-child(even){
+	background-color:#FEFEFE;
+}
+.main section article .cart-preview .cart-products tr:nth-child(odd){
+	background-color:#DEDEDE;
+}
+.main section article .cart-preview .cart-products tr:nth-child(1){
+	background-color:black;
+	color:white;
+}
+.main section article .cart-preview .cart-products tr th,
+.main section article .cart-preview .cart-products tr td{
+	padding:6px 2%;
+}
 
-  .payment-methods{
-    padding-left:10px;
-  }
+.main section article .cart-preview .cart-products tr th:nth-child(1),
+.main section article .cart-preview .cart-products tr td:nth-child(1){
+	text-align: left;
+	width: 46%;  
+}
 
-  .payment-methods li{
-    background: url("../img/web/mercadopago-methods.png") no-repeat scroll 0 0 transparent;
-    text-indent: -5000px;
-    display: inline-block;
-    min-height: 46px;
-    width: 65px;
-    margin: 0 0 5px;
-  }
-  .payment-methods.paypoints li{
-    width: 90px;
-  }
+.main section article .cart-preview .cart-products tr th:nth-child(2),
+.main section article .cart-preview .cart-products tr td:nth-child(2){
+	text-align: left;
+	width: 8%;
+}
 
-  .payment-methods li.visa{background-position:-25px -33px}
-  .payment-methods li.master{background-position:-37px -134px}
-  .payment-methods li.amex{background-position:-43px -233px}
-  .payment-methods li.hipercard{background-position:-28px -334px}
-  .payment-methods li.melicard{background-position:-39px -434px}
-  .payment-methods li.elo{background-position:-46px -530px}
-  .payment-methods li.bolbradesco{background-position:-40px -630px}
-  .payment-methods li.itau{background-position:-41px -788px}
-  .payment-methods li.diners{background-position:-39px -723px}
-  .payment-methods li.naranja{background-position:-45px -335px}
-  .payment-methods li.tarshop{background-position:-38px -433px}
-  .payment-methods li.cencosud{background-position:-38px -529px}
-  .payment-methods li.cabal{background-position:-45px -629px}
-  .payment-methods li.argencard{background-position:-45px -729px}
-  .payment-methods li.pagofacil{background-position:-44px -835px}
-  .payment-methods li.redlink{background-position:-44px -935px}
-  .payment-methods li.rapipago{background-position:-18px -1028px}
-  .payment-methods li.bapropagos{background-position:-25px -1132px}
-  .payment-methods li.banelco{background-position:-24px -1231px}
-  .payment-methods li.nativa{background-position:-34px -1335px}
-  .payment-methods li.diners{background-position:-46px -1432px}
-  .payment-methods li.venezuela{background-position:-12px -233px}
-  .payment-methods li.provincial{background-position:-9px -328px}
-  .payment-methods li.mercantil{background-position:-13px -435px}
-  .payment-methods li.sivale{background-position:-11px -325px}
-  .payment-methods li.banamex{background-position:-10px -433px}
-  .payment-methods li.bancomer{background-position:-5px -531px}
-  .payment-methods li.serfin{background-position:-6px -630px}
-  .payment-methods li.hsbc{background-position:-6px -722px}
-  .payment-methods li.oxxo{background-position:-26px -816px}
-  .payment-methods li.deposit-and-transfer-icon{background-position:-4px -914px}
+.main section article .cart-preview .cart-products tr th:nth-child(3),
+.main section article .cart-preview .cart-products tr td:nth-child(3){
+	text-align: right;
+	width: 19%;
+}
+.main section article .cart-preview .cart-products tr th:nth-child(4),
+.main section article .cart-preview .cart-products tr td:nth-child(4){
+	text-align: right;
+	width: 19%;
+}
 
-  .paidmethods .visa{
-    background-image:url('../img/icons/visa.png');
-  }
-  .paidmethods .mastercard{
-    background-image:url('../img/icons/mastercard.png');
-  }
-  .paidmethods .amex{
-    background-image:url('../img/icons/amex.png');
-  }
-  .paidmethods .naranja{
-    background-image:url('../img/icons/naranja.png');
-  }
-  .paidmethods .argencard{
-    background-image:url('../img/icons/argencard.png');
-  }
-  .paidmethods .rapipago{
-    background-image:url('../img/icons/rapipago.png');
-  }
-  .paidmethods .pagofacil{
-    background-image:url('../img/icons/pagofacil.png');
-  }
-  .paidmethods .provincia{
-    background-image:url('../img/icons/provincia.png');
-  }
-  .paidmethods .banelco{
-    background-image:url('../img/icons/banelco.jpg');
-  }
-  .paidmethods .redlink{
-    background-image:url('../img/icons/redlink.png');
-  }
-  .paidmethods .cabal{
-    background-image:url('../img/icons/cabal.jpg');
-  }
+.main section article .cart-preview .cart-products tr td:last-child{
+	width: 8%;
+	text-align: center;
+}
+.main section article .cart-preview .cart-products tr td input.quantity{
+	text-align: center;
+}
+.main section article .cart-preview .cart-additionals{
+	text-align: right;
+	
+}
+.main section article .cart-preview .cart-additionals hr{
+	border-top: 1px dashed gray;
+	margin:10px 0;
+}
+.main section article .cart-preview .cart-additionals table{
+	width: 100%;
+}
 
-  footer{
-    padding:5px 0;
-    font-size:11px;
-  }
+.main aside{
+	
+	float: right;
+	padding: 3px;
+	width: 24%;
+	height:100%;
+}
 
-  .clear{
-    clear: both;
-  }
-  
-  .left_bg,.right_bg{
+.main aside h3{
+	font-family: 'Ubuntu';
+}
+
+.mercadopago{
+	background-image: url("../img/web/mercadopago-logo.png");
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	display: inline-block;
+	height: 25px;
+	margin: 5px 10px;
+	width: 132px;
+}
+
+.payment-methods{
+	padding-left:10px;
+}
+
+.payment-methods li{
+	background: url("../img/web/mercadopago-methods.png") no-repeat scroll 0 0 transparent;
+	text-indent: -5000px;
+	display: inline-block;
+	min-height: 46px;
+	width: 65px;
+	margin: 0 0 5px;
+}
+.payment-methods.paypoints li{
+	width: 90px;
+}
+
+.payment-methods li.visa{background-position:-25px -33px}
+.payment-methods li.master{background-position:-37px -134px}
+.payment-methods li.amex{background-position:-43px -233px}
+.payment-methods li.hipercard{background-position:-28px -334px}
+.payment-methods li.melicard{background-position:-39px -434px}
+.payment-methods li.elo{background-position:-46px -530px}
+.payment-methods li.bolbradesco{background-position:-40px -630px}
+.payment-methods li.itau{background-position:-41px -788px}
+.payment-methods li.diners{background-position:-39px -723px}
+.payment-methods li.naranja{background-position:-45px -335px}
+.payment-methods li.tarshop{background-position:-38px -433px}
+.payment-methods li.cencosud{background-position:-38px -529px}
+.payment-methods li.cabal{background-position:-45px -629px}
+.payment-methods li.argencard{background-position:-45px -729px}
+.payment-methods li.pagofacil{background-position:-44px -835px}
+.payment-methods li.redlink{background-position:-44px -935px}
+.payment-methods li.rapipago{background-position:-18px -1028px}
+.payment-methods li.bapropagos{background-position:-25px -1132px}
+.payment-methods li.banelco{background-position:-24px -1231px}
+.payment-methods li.nativa{background-position:-34px -1335px}
+.payment-methods li.diners{background-position:-46px -1432px}
+.payment-methods li.venezuela{background-position:-12px -233px}
+.payment-methods li.provincial{background-position:-9px -328px}
+.payment-methods li.mercantil{background-position:-13px -435px}
+.payment-methods li.sivale{background-position:-11px -325px}
+.payment-methods li.banamex{background-position:-10px -433px}
+.payment-methods li.bancomer{background-position:-5px -531px}
+.payment-methods li.serfin{background-position:-6px -630px}
+.payment-methods li.hsbc{background-position:-6px -722px}
+.payment-methods li.oxxo{background-position:-26px -816px}
+.payment-methods li.deposit-and-transfer-icon{background-position:-4px -914px}
+
+.paidmethods .visa{
+	background-image:url('../img/icons/visa.png');
+}
+.paidmethods .mastercard{
+	background-image:url('../img/icons/mastercard.png');
+}
+.paidmethods .amex{
+	background-image:url('../img/icons/amex.png');
+}
+.paidmethods .naranja{
+	background-image:url('../img/icons/naranja.png');
+}
+.paidmethods .argencard{
+	background-image:url('../img/icons/argencard.png');
+}
+.paidmethods .rapipago{
+	background-image:url('../img/icons/rapipago.png');
+}
+.paidmethods .pagofacil{
+	background-image:url('../img/icons/pagofacil.png');
+}
+.paidmethods .provincia{
+	background-image:url('../img/icons/provincia.png');
+}
+.paidmethods .banelco{
+	background-image:url('../img/icons/banelco.jpg');
+}
+.paidmethods .redlink{
+	background-image:url('../img/icons/redlink.png');
+}
+.paidmethods .cabal{
+	background-image:url('../img/icons/cabal.jpg');
+}
+
+footer{
+	padding:5px 0;
+	font-size:11px;
+}
+
+.clear{
+	clear: both;
+}
+
+.left_bg,.right_bg{
 	width:0px;
 	-webkit-transition:0.5s;  
-    -moz-transition:0.5s;  
-    -o-transition:0.5s;  
-    transition: 0.5s;  
-  }
-  
-  .resumeTable{
+	-moz-transition:0.5s;  
+	-o-transition:0.5s;  
+	transition: 0.5s;  
+}
+
+.resumeTable{
 	margin: 5px;
 	border-radius: 2px;
 	border: 1px solid #F0F0F0;
@@ -390,27 +452,26 @@
 	margin:0 auto;
 	text-align:center;
 	-webkit-transition:0.5s;  
-    -moz-transition:0.5s;  
-    -o-transition:0.5s;  
-    transition: 0.5s;  
-  }
-  
-  .resumeTable th{
-	border-bottom:3px solid #EEE;
-  }
-  
-  .resumeTable tr{
-	border-bottom:1px dotted #DDD;
-  }
-  
-  
-  .resumeTable .row0{
-	background: #FAFAFA;
-  }
-  
-  .resumeTable .row1{
-	background: #F5F5F5;
-  }
+	-moz-transition:0.5s;  
+	-o-transition:0.5s;  
+	transition: 0.5s;  
+}
 
-  
-  
+.resumeTable th{
+	border-bottom:3px solid #EEE;
+}
+
+.resumeTable tr{
+	border-bottom:1px dotted #DDD;
+}
+
+
+.resumeTable .row0{
+	background: #FAFAFA;
+}
+
+.resumeTable .row1{
+	background: #F5F5F5;
+}
+
+

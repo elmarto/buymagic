@@ -1,7 +1,7 @@
 <?php
 
 class ProductPrice extends Eloquent {
-	protected $table = "product_price";
+	public $table = "product_price";
 }
 
 ?>
