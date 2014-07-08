@@ -26,3 +26,6 @@ Route::get('/db/products/{pid?}','ProductListController@get');
 Route::get('/cart','CartController@get');
 Route::post('/cart','CartController@set');
 Route::get('/cart/flush','CartController@flush');
+
+//Checkout Routes
+Route::get('/checkout','CheckoutController@index');

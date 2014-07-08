@@ -258,8 +258,14 @@ header .logo{
 	display:block;
 }
 
+.main section article.product-detail .product-link .block.image{
+	width: 100%;
+	height: 200px;
+}
+
 .main section article .cart-preview .cart-products{
-	width:100%;
+	width:98%;
+	margin:2%;
 }
 
 .main section article .cart-preview .cart-products tr:nth-child(even){

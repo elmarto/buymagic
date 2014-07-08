@@ -60,8 +60,8 @@ class CartController extends \BaseController {
 			for ($i=0; $i<count($products); $i++){
 				$product=$products[$i];
 
-				$price_unit=	ProductHelpers::getPrice($storedProducts[$i]['quantity'],$product->prices);
-				$element= (object)array(
+				$price_unit = ProductHelpers::getPrice($storedProducts[$i]['quantity'],$product->prices);
+				$element = (object)array(
 					'id' => $product->id,
 					'codename' => $product->codename,
 					'name'=> $product->name,

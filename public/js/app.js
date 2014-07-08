@@ -18,7 +18,12 @@ productcatApp.config(['$routeProvider',
         templateUrl: 'partials/cart.html',
         controller: 'CartCtrl'
       }).
+      when('/checkout', {
+        templateUrl: 'partials/checkout.html',
+        controller: 'CartCtrl'
+      }).
       otherwise({
         redirectTo: '/products'
       });
-  }]);
+  }
+]);

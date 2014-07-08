@@ -8,13 +8,6 @@
 	<meta name="description" content="buy magic the gathering cartas cards sobres boosters box">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
 
-	<!--script src="js/libs/modernizr-2.5.3.min.js"></script-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/controllers.js"></script>
-
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
 	<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width: 800px)" />
@@ -73,7 +66,11 @@
 		</footer>
 	</div>
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
 	<script>
 		/*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

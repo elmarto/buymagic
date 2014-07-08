@@ -1,4 +1,4 @@
-<a class="button-back" href="/#products">&#171; Volver</a>
+<a class="button-back" href="/#cart">&#171; Volver</a>
 
 <article>
 	<div ng-if="products.length > 0" class="cart-preview">
@@ -8,16 +8,12 @@
 				<th>Cantidad</th>
 				<th>Precio Unidad</th>
 				<th>Precio Total</th>
-				<th></th>
 			</tr>
 			<tr ng-repeat="product in products">
-				<td><a class="product-link" href="#/products/{{product.codename}}">{{product.name}} - {{product.type}}</a></td>
-				<td>
-					<input class="quantity" id="quantity-{{product.id}}" data-pid="{{product.id}}" min="1" max="99" type="number" ng-model="product.quantity" ng-blur="updateQuantityPrices(this)"  />
-				</td>
+				<td><a class="product-link" target="_blank" href="#/products/{{product.codename}}">{{product.name}} - {{product.type}}</a></td>
+				<td ng-model="product.quantity">${{product.price_quantity}}</td>
 				<td ng-bind="product.price_unit">${{product.price_unit}}</td>
 				<td ng-model="product.price_quantity">${{product.price_quantity}}</td>
-				<td>Remover</td>
 			</tr>
 		</table>
 		<div class="cart-additionals">
@@ -43,7 +39,7 @@
 			<h3>TOTAL <span>${{total}}</span></h3>
 		</div>
 
-		<a href="#/checkout">checkout</a>
+		<a href="#/checkout" ng-click="pay()" class="pay-button button">pagar</a>
 	</div>
 
 	<h3 ng-if="products.length <= 0">EL CARRITO ESTÁ VACÍO</h3>

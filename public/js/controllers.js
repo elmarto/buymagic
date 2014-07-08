@@ -1,51 +1,13 @@
 var productcatControllers = angular.module('productcatControllers', []);
- 
+
+//Product List Controller
 productcatControllers.controller('ProductListCtrl', function ($scope, $http) {
 	$http.get('/db/products').success(function(data){
 		$scope.products=data;
 	});
 });
 
-productcatControllers.controller('ProductDetailCtrl', 
-	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-		$http.get('/db/products/'+$routeParams.productId).success(function(data){
-			$scope.product=data[0];
-		});
-	}]
-);
-
-productcatControllers.controller('CartCtrl', 
-	['$scope', '$http', function($scope, $http) {
-		$http.get('/cart').success(function(cart){
-			$scope.products=cart.products;
-			$scope.subtotal=cart.subtotal;
-			$scope.total=cart.subtotal;
-
-			$scope.updateQuantityPrices=function($event){
-				var pid=$event.product.id;
-				var quant=parseInt($("#quantity-"+pid).val());
-
-				$.ajax({
-					url: '/cart',
-					type:'POST',
-					data: { pid: pid, quantity: quant, action:'set' },
-					success: function(cart) {
-						$scope.$apply(function(){
-							$scope.products=cart.products;
-							$scope.subtotal=cart.subtotal;
-							$scope.total=cart.subtotal;
-						});
-					},
-					error:function(){
-						$("#cart-cant").html(parseFloat($("#cart-cant").html())-quant);
-					}
-				});
-			};
-		});
-		
-	}]
-);
-
+//Product List AddToCart Controller
 productcatControllers.controller('CartController', 
 	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
 		/*$http.get('/db/products/'+$routeParams.productId).success(function(data){
@@ -112,3 +74,53 @@ productcatControllers.controller('CartController',
 		
 	}]
 );
+
+//Product Detail Controller
+productcatControllers.controller('ProductDetailCtrl', 
+	['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
+		$http.get('/db/products/'+$routeParams.productId).success(function(data){
+			$scope.product=data[0];
+		});
+	}]
+);
+
+//Cart & Checkout Controller
+productcatControllers.controller('CartCtrl', 
+	['$scope', '$http', function($scope, $http) {
+		$http.get('/cart').success(function(cart){
+			$scope.products=cart.products;
+			$scope.subtotal=cart.subtotal;
+			$scope.total=cart.subtotal;
+
+			$scope.updateQuantityPrices=function($event){
+				var pid=$event.product.id;
+				var quant=parseInt($("#quantity-"+pid).val());
+
+				$.ajax({
+					url: '/cart',
+					type:'POST',
+					data: { pid: pid, quantity: quant, action:'set' },
+					success: function(cart) {
+						$scope.$apply(function(){
+							$scope.products=cart.products;
+							$scope.subtotal=cart.subtotal;
+							$scope.total=cart.subtotal;
+						});
+					},
+					error:function(){
+						$("#cart-cant").html(parseFloat($("#cart-cant").html())-quant);
+					}
+				});
+			};
+
+			$scope.pay=function($event){
+				$http.get('/checkout').success(function(mp){
+					window.top.location.href=mp.sandbox_init_point;
+				});
+			}
+		});
+		
+	}]
+);
+
+
