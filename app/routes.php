@@ -29,3 +29,6 @@ Route::get('/cart/flush','CartController@flush');
 
 //Checkout Routes
 Route::get('/checkout','CheckoutController@index');
+
+//Users Routes
+Route::get('/db/users','UserController@index');

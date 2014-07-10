@@ -7,6 +7,3 @@ class Product extends Eloquent {
 		return $this->hasMany('ProductPrice','pid');
 	}
 }
-
-
-?>

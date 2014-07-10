@@ -21,17 +21,32 @@ class CheckoutController extends \BaseController {
 		$cart =  (new CartController)->get()['products'][0]->name;
 		foreach((new CartController)->get()['products'] as $item) {
 			array_push($items, array(
-				"title" => $item->type.' - '.$item->name,
+				//"title" => $item->type.' - '.$item->name, //multiples items no implementado en MP
+				"title" => "Productos BuyMagic",
 	            "quantity" => $item->quantity,
 	            "currency_id" => "ARG",
 	            "unit_price" => $item->price_unit
 			));
 		}
 
+		//payer info for MP
+		$payer = array(
+			"name" => "Juan",
+			"Surname" => "Prueba",
+			"email" => "cliente@cliente.com"
+		);
+
+		$back_urls = array(
+			"success" => "http://localhost:8000",
+			"failiure" => "http://localhost:8000",
+			"pending" => "http://localhost:8000"
+		);
 
 		//Preference for MP instance
 		$preference = array (
-		    "items" => $items
+		    "items" => $items,
+		    "payer" => $payer,
+		    "back_urls" => $back_urls
 		);
 
 		$preferenceResult = $mp->create_preference($preference);
