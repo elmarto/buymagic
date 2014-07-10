@@ -9,10 +9,10 @@ class OrderTableSeeder extends Seeder {
         DB::table('orders')->insert(
             array(
                 array(
-                    'uid' => 1
+                    'uid' => 2
                 ),
                 array(
-                    'uid' => 2
+                    'uid' => 3
                 )
             )
         );

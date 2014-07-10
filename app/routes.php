@@ -31,4 +31,14 @@ Route::get('/cart/flush','CartController@flush');
 Route::get('/checkout','CheckoutController@index');
 
 //Users Routes
-Route::get('/db/users','UserController@index');
+Route::get ('/db/user','UserController@index');
+Route::post('/db/login','UserController@login');
+Route::get ('/db/logout','UserController@logout');
+Route::filter('auth', function(){
+    if (Auth::guest())
+        return Redirect::route('/');
+});
+Route::filter('guest', function(){
+    if (Auth::check())
+        return Redirect::route('/');
+});

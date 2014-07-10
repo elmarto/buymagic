@@ -123,4 +123,43 @@ productcatControllers.controller('CartCtrl',
 	}]
 );
 
+//Login Controller
+productcatControllers.controller('LoginCtrl', 
+	['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
+
+		$scope.loginButtonHandler=function($event){
+			$event.preventDefault();
+			
+			var input={};
+			input.email		= $('#email').val();
+			input.password	= $('#password').val();
+
+			$http.post('/db/login',input).success(function(data){
+				$('.user').html('Bienvenido '+data.name);
+				$location.url('/');
+			});
+		}
+		
+	}]
+);
+
+/*//Login Controller
+productcatControllers.controller('LoginCtrl', 
+	['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
+
+		$scope.loginButtonHandler=function($event){
+			$event.preventDefault();
+			
+			var input={};
+			input.email		= $('#email').val();
+			input.password	= $('#password').val();
+
+			$http.post('/db/login',input).success(function(data){
+				$('.user').html('Bienvenido '+data.name);
+				$location.url('/');
+			});
+		}
+		
+	}]
+);*/
 

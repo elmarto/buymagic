@@ -87,6 +87,7 @@ header .logo{
 	padding:5px;*/
 	clear: both;
 }
+
 .main section{
 	float:left;
 	width:75%;
@@ -101,17 +102,6 @@ header .logo{
 	transition: 0.5s;  
 }
 
-.main section .button-back{
-	border: 1px solid #AAA;
-	padding: 5px;
-	border-radius: 2px;
-	color: #666;
-	background: #EEE;
-	cursor: pointer;
-	margin: 5px;
-	text-decoration: none;
-	display:inline-block;
-}
 .main section article{
 	/*border-bottom:1px solid #ccc;*/
 	padding:5px;
@@ -480,4 +470,15 @@ footer{
 	background: #F5F5F5;
 }
 
-
+.button{
+	border: 1px solid #AAA;
+	padding: 5px;
+	border-radius: 2px;
+	color: #666;
+	background: #EEE;
+	cursor: pointer;
+	margin: 5px;
+	text-decoration: none;
+	display:inline-block;
+	text-transform: uppercase;
+}

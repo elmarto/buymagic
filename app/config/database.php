@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'buymagic',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'xampp',
 			'unix_socket'   => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',

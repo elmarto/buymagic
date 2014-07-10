@@ -12,6 +12,26 @@ class UserController extends \BaseController {
 		return User::all();
 	}
 
+	
+	public function login()
+	{
+		//Auth::login(UserInterface $user, $remember = false);
+		$email =  strtolower(Input::get('email'));
+		/*User::create([
+		        'email' => $email,
+		        'password' => Hash::make(Input::get('password')),
+		        ]);*/
+
+		$user = User::where('email', '=', $email)->first();
+		
+		Auth::login($user, true);
+
+		if(Auth::check())
+			return array('success'=>true,  'email' => Auth::user()->email, 'name' => Auth::user()->name );
+		else
+			return array('success'=>false);
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -82,20 +102,6 @@ class UserController extends \BaseController {
 		//
 	}
 
-	public function getRememberToken()
-	{
-	    return $this->remember_token;   
-	}
-
-	public function setRememberToken($value)
-	{
-	    $this->remember_token = $value;
-	} 
-
-	public function getRememberTokenName()
-	{
-	    return 'remember_token';
-	}
 	
 
 

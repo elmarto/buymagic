@@ -21,6 +21,7 @@
 		</a>
 		<header>
 			<div class="logo"><h1>buyMagic</h1></div>
+			<div class="user"><a href="#/login" class="button login-button">login</a></div>
 		</header>
 
 		
