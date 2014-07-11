@@ -32,6 +32,11 @@ class UserController extends \BaseController {
 			return array('success'=>false);
 	}
 
+	public function isLogged()
+	{
+		return Auth::check();
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.

@@ -34,6 +34,7 @@ Route::get('/checkout','CheckoutController@index');
 Route::get ('/db/user','UserController@index');
 Route::post('/db/login','UserController@login');
 Route::get ('/db/logout','UserController@logout');
+Route::get ('/db/islogged','UserController@isLogged');
 Route::filter('auth', function(){
     if (Auth::guest())
         return Redirect::route('/');

@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder {
                     'name'      => 'Martín',
                     'lastname'  => 'Sacco',
                     'avatarUrl' => 'img/products/theros-booster-pack.png',
-                    'is_admin'  => true
+                    'role'      => 'admin'
                 ),
                 array(
                     'email' 	=> 'juanito@test.com',
@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder {
                     'name' 		=> 'Juanito',
                     'lastname' 	=> 'Fernandez',
                     'avatarUrl' => 'img/products/theros-booster-pack.png',
-                    'is_admin'  => false
+                    'role'      => 'buyer'
                 ),
                 array(
                     'email' 	=> 'pablogimenez@test.com',
@@ -30,7 +30,7 @@ class UserTableSeeder extends Seeder {
                     'name' 		=> 'Pablo',
                     'lastname' 	=> 'Gimenez',
                     'avatarUrl' => 'img/products/theros-booster-pack.png',
-                    'is_admin'  => false
+                    'role'      => 'buyer'
                 )                
             )
         );

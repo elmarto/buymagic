@@ -71,6 +71,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/auth.js"></script>
 	<script src="js/controllers.js"></script>
 	<script>
 		/*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
