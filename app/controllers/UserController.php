@@ -15,8 +15,7 @@ class UserController extends \BaseController {
 	
 	public function login()
 	{
-		//Auth::login(UserInterface $user, $remember = false);
-		$email =  strtolower(Input::get('email'));
+		$email = strtolower(Input::get('email'));
 		/*User::create([
 		        'email' => $email,
 		        'password' => Hash::make(Input::get('password')),
@@ -26,15 +25,15 @@ class UserController extends \BaseController {
 		
 		Auth::login($user, true);
 
-		if(Auth::check())
-			return array('success'=>true,  'email' => Auth::user()->email, 'name' => Auth::user()->name );
-		else
-			return array('success'=>false);
+		return	$this->isLogged();
 	}
 
 	public function isLogged()
 	{
-		return Auth::check();
+		if(Auth::check())
+			return array('success'=>true,  'email' => Auth::user()->email, 'name' => Auth::user()->name, 'role' => Auth::user()->role );
+		else
+			return array('success'=>false);
 	}
 
 

@@ -13,7 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (max-width: 800px)" />
 	<link rel="stylesheet" type="text/css" href="css/phone.css"  media="screen and (max-width: 480px)" />
 </head>
-<body>
+<body ng-controller="MainCtrl">
 	<!--[if lt IE 7]><p class=chromeframe>¡Tu browser es <em>antiguo</em>! <a href="http://browsehappy.com/">¡Cambialo ahora!</a> o <a href="http://www.google.com/chromeframe/?redirect=true">instala Google Chrome Frame</a> para explorar este sitio.</p><![endif]-->
 	<div id="wrapper">
 		<a href="/#cart" class="fixedMenu" id="fixedMenu">
@@ -21,7 +21,26 @@
 		</a>
 		<header>
 			<div class="logo"><h1>buyMagic</h1></div>
-			<div class="user"><a href="#/login" class="button login-button">login</a></div>
+			<div class="user">
+				<div >Bienvenido {{user.name}} | <a href="#/login" class="button login-button">login</a></div>
+					
+				<section ng-controller="LoginCtrl" class="login">
+					<form action="/db/login" method="POST">
+						<div class="row">
+							<label for="email">Email:</label>
+							<input name="email" id="email" />
+						</div>
+						<div class="row">
+							<label for="password">Password:</label>
+							<input type="password" id="password" />
+						</div>
+						<div>
+							<input type="submit" id="submit" class="button submit-button" ng-click="loginButtonHandler($event)" value="enviar" />
+						</div>
+					</form>
+					<div class="clear"></div>
+				</article>
+			</div>
 		</header>
 
 		
@@ -71,8 +90,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
 	<script src="js/app.js"></script>
-	<script src="js/auth.js"></script>
 	<script src="js/controllers.js"></script>
+	<script src="js/auth.js"></script>
 	<script>
 		/*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

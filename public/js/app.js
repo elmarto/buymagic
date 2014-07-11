@@ -1,6 +1,6 @@
 var productcatApp = angular.module('productcatApp', [
 	'ngRoute',
-	'controllers'
+	'productcatControllers'
 ]);
 
 productcatApp.config(['$routeProvider',

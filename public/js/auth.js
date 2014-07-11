@@ -1,52 +1,63 @@
-productcatApp.factory('loginService',function($http, $location, sessionService){
-	return{
-		login:function(data,scope){
-			var $promise=$http.post('/db/login',data); //send data to user.php
-			$promise.then(function(msg){
-				var uid=msg.data;
-				if(uid){
-					//scope.msgtxt='Correct information';
-					//sessionService.set('uid',uid);
-					$location.path('/');
-				}	       
-				else  {
-					scope.msgtxt='incorrect information';
-					$location.path('/login');
-				}				   
-			});
-		},
-		logout:function(){
-			//sessionService.destroy('uid');
+productcatApp.factory('Auth',function($http, $location, Session){
+	var auth = {};
+	
+	//Login
+	auth.login = function(data,scope){
+		
+		$http.post('/db/login',data).then(function(res){		
+			
+			if(res.data.success){				
+				Session.create(1,res.data.email,res.data.name);
+				$location.path('/');
+				console.log('si');
+			} else {
+				scope.msgtxt='incorrect information';
+				console.log('no');
+			}				   
+		});
+
+	};
+
+	//Logout
+	auth.logout=function(){
+		$http.post('/db/logout',data).then(function(res){
+			Session.destroy();
 			$location.path('/login');
-		},
-		islogged:function(){
-			var $checkSessionServer=$http.post('/db/islogged');
-			return $checkSessionServer;
-			/*
-			if(sessionService.get('user')) return true;
-			else return false;
-			*/
-		}
-	}
+		});
+	};
+
+	//Check if is logged
+	auth.islogged=function(){
+		var $checkSessionServer=$http.post('/db/islogged');
+		
+		if(Session.create('user')) 
+			return true;
+		else 
+			return false;
+		
+		return $checkSessionServer;
+	};
+	
+	return auth;
+
+})
+
+.service('Session', function () {
+
+	this.create = function (sessionId, email, name, role) {
+		this.id 	= sessionId;
+		this.email 	= email;
+		this.name 	= name;
+		this.role 	= role;
+	};
+
+	this.destroy = function () {
+		this.id 	= null;
+		this.email 	= null;
+		this.name 	= "Invitado";
+		this.role 	= "guest";
+	};
+
+	return this;
 
 });
-/*
-services.factory('Auth', function($http){
-  return {
-	    load: function() {
-			return $http.get('/db/auth');
-		},
-	    logout: function() {
-			return $http.get('/db/logout');
-		},
-		login: function(inputs) {
-			return $http.post('/db/login',input);
-		},
-		register: function(inputs) {
-			return $http.post('/db/register',input);
-		},
-		check: function() {
-			return $http.post('/db/check',input);
-		}
-	}
-});*/
