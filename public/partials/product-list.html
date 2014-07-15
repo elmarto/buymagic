@@ -1,7 +1,9 @@
-<div class="tool-box">
+<h1>Productos</h1>
+
+<!--div class="tool-box">
 	<label for="searchbox">Buscar</label>
 	<input type="text" id="searchbox" name="searchbox" placeholder="Booster, Theros, etc" ng-model="query">
-</div>
+</div-->
 
 <article ng-repeat="product in products | filter:query">
 	<a class="product-link" href="#/products/{{product.codename}}">

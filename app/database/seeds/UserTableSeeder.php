@@ -13,6 +13,7 @@ class UserTableSeeder extends Seeder {
                     'password'  => Hash::make('escuta'),
                     'name'      => 'Martín',
                     'lastname'  => 'Sacco',
+                    'address'   => 'Pumacahua 1452, Capital Federal',
                     'avatarUrl' => 'img/products/theros-booster-pack.png',
                     'role'      => 'admin'
                 ),
@@ -21,6 +22,7 @@ class UserTableSeeder extends Seeder {
                     'password' 	=> Hash::make('asdfasdf'),
                     'name' 		=> 'Juanito',
                     'lastname' 	=> 'Fernandez',
+                    'address'   => 'Rivadavia 3992, Capital Federal',
                     'avatarUrl' => 'img/products/theros-booster-pack.png',
                     'role'      => 'buyer'
                 ),
@@ -29,6 +31,7 @@ class UserTableSeeder extends Seeder {
                     'password' 	=> Hash::make('asdfasdf'),
                     'name' 		=> 'Pablo',
                     'lastname' 	=> 'Gimenez',
+                    'address'   => 'Chacabuco 688, Capital Federal',
                     'avatarUrl' => 'img/products/theros-booster-pack.png',
                     'role'      => 'buyer'
                 )                

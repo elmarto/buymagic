@@ -31,10 +31,11 @@ Route::get('/cart/flush','CartController@flush');
 Route::get('/checkout','CheckoutController@index');
 
 //Users Routes
-Route::get ('/db/user','UserController@index');
-Route::post('/db/login','UserController@login');
+//Route::get ('/db/user','UserController@index');
 Route::get ('/db/logout','UserController@logout');
-Route::get ('/db/islogged','UserController@isLogged');
+Route::post('/db/login','UserController@login');
+Route::post('/db/register','UserController@create');
+Route::post('/db/islogged','UserController@isLogged');
 Route::filter('auth', function(){
     if (Auth::guest())
         return Redirect::route('/');

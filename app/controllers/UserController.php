@@ -16,24 +16,32 @@ class UserController extends \BaseController {
 	public function login()
 	{
 		$email = strtolower(Input::get('email'));
-		/*User::create([
-		        'email' => $email,
-		        'password' => Hash::make(Input::get('password')),
-		        ]);*/
-
 		$user = User::where('email', '=', $email)->first();
-		
-		Auth::login($user, true);
 
-		return	$this->isLogged();
+		if(isset($user)){
+			Auth::login($user, true);
+			return	$this->isLogged();
+		}else{
+			return array('success'=>false);
+		}
+		
 	}
 
 	public function isLogged()
 	{
-		if(Auth::check())
-			return array('success'=>true,  'email' => Auth::user()->email, 'name' => Auth::user()->name, 'role' => Auth::user()->role );
-		else
+		if(Auth::check()){
+			$user=Auth::user();
+			$user_data = array('email' => $user->email, 'name' => $user->name, 'role' => $user->role);
+			return array('success'=>true, 'user' => $user_data);
+		}else{
 			return array('success'=>false);
+		}
+	}
+
+	public function logout()
+	{
+		Auth::logout();
+		return array('success'=>true);
 	}
 
 
@@ -44,7 +52,19 @@ class UserController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$user = new User;
+
+	    $user->email = Input::get('email');
+	    $user->password = Hash::make(Input::get('password'));
+	    $user->name = Input::get('name');
+	    $user->lastname = Input::get('lastname');
+	    $user->address = Input::get('address');
+
+	    $user->save();
+
+	    Auth::login($user, true);
+
+		return	$this->isLogged();
 	}
 
 

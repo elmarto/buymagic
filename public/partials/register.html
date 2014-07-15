@@ -1,0 +1,58 @@
+<a class="button button-back" href="/">&#171; Volver</a>
+<article class="register">
+	<form action="/db/register" method="POST" role="form" class="form-horizontal container-fluid">
+
+		<h3 class="page-header">Información Personal</h3>
+		<div class="form-group row">
+			<div class="col-sm-4">
+				<input type="text" name="email" id="email" class="form-control" ng-model="register.email" placeholder="Email" />
+			</div>
+			<div class="col-sm-4">
+				<!--input type="text" name="confirm-email" id="confirm-email" class="form-control" ng-model="register.confirm-email" placeholder="Confirmar Email" /-->
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-4">
+				<input type="password" name="password" id="password" class="form-control"  ng-model="register.password" placeholder="Password" />
+			</div>
+			<div class="col-sm-4">
+				<input type="password" name="confirm-password" id="confirm-password" class="form-control"  ng-model="register.confirmPassword" placeholder="Confirmar Password" />
+			</div>
+		</div>
+		<div class="form-group row">
+			<div class="col-sm-4">
+				<input type="text" name="name" id="name" ng-model="register.name" class="form-control" placeholder="Nombre" />
+			</div>
+			<div class="col-sm-4">
+				<input type="text" name="lastname" id="lastname" ng-model="register.lastname" class="form-control" placeholder="Apellido" />
+			</div>
+		</div>
+
+		<h3 class="page-header">Dirección de Envíos</h3>
+		<div class="form-group row">
+			<div class="col-sm-4">
+				<input type="text" name="address-street" id="address-street" ng-model="register.address_street" class="form-control" placeholder="Calle" />
+			</div>
+			<div class="col-sm-2">
+				<input type="text" name="address-number" id="address-number" ng-model="register.address_number" class="form-control" placeholder="Altura" />
+			</div>
+			<div class="col-sm-2">
+				<input type="text" name="address-apt" id="address-apt" ng-model="register.address_apt" class="form-control" placeholder="Dpto." />
+			</div>
+			<div class="col-sm-4">
+				<select class="form-control">
+					<option>Capital Federal</option>
+				</select>
+			</div>
+		</div>
+
+		<hr />
+		
+		<div class="form-group row">
+			<div class="col-sm-12">
+				<input type="submit" id="submit" class="btn btn-block btn-warning submit-button" class="form-control" ng-click="submitRegisterButtonHandler($event)" value="Registrarse" />
+			</div>
+		</div>
+	</form>
+	<div class="clear"></div>
+</article>

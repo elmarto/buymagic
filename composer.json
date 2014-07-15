@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"mercadopago/sdk": "dev-master"
+		"mercadopago/sdk": "dev-master",
+		"facebook/php-sdk": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

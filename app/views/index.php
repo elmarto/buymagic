@@ -20,23 +20,33 @@
 			<span class="cart-cant" id="cart-cant">0</span>
 		</a>
 		<header>
-			<div class="logo"><h1>buyMagic</h1></div>
-			<div class="user">
-				<div >Bienvenido {{user.name}} | <a href="#/login" class="button login-button">login</a></div>
-					
-				<section ng-controller="LoginCtrl" class="login">
-					<form action="/db/login" method="POST">
-						<div class="row">
-							<label for="email">Email:</label>
-							<input name="email" id="email" />
+			<a class="logo" href="/"><h2>buyMagic</h2></a>
+			<div class="user">	
+				<section ng-controller="LoginCtrl" class="login-section" id="login-section">
+					<div>
+						<span ng-if="user.id">{{user.name}} |</span> 
+						<a ng-if="!user.id" id="login-button" class="login-button" ng-click="loginButtonHandler($event)">{{loginButtonText}}</a>
+						<a ng-if="user.id" id="logout-button" class="logout-button" ng-click="logoutButtonHandler($event)">logout</a>
+						<span ng-if="!user.id">| <a href="#/register" id="register-button" class="register-button">registrarse</a></span>
+					</div>			
+					<form action="/db/login" method="POST" ng-if="!user.id" id="login-form" style="display:none;">
+						<hr />
+						<div class="form-group row">
+							<div class="col-sm-4">
+								<input class="form-control" type="text" name="email" id="email" placeholder="Email" ng-model="login.email" />
+							</div>
+							<div class="col-sm-4">
+								<input class="form-control" type="password" id="password" placeholder="Password" ng-model="login.password" />
+							</div>
+							<div class="col-sm-1">
+								<input type="submit" id="submit" class="btn btn-warning submit-button" ng-click="submitLoginButtonHandler($event)" value="Login" />
+							</div>
+							<div class="col-sm-3">
+								<a class="password-recovery-link" href="#/password-recovery">Olvidé la contraseña</a>
+							</div>
 						</div>
-						<div class="row">
-							<label for="password">Password:</label>
-							<input type="password" id="password" />
-						</div>
-						<div>
-							<input type="submit" id="submit" class="button submit-button" ng-click="loginButtonHandler($event)" value="enviar" />
-						</div>
+						
+						<div class="clear"></div>
 					</form>
 					<div class="clear"></div>
 				</article>

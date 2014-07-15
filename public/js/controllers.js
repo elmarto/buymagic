@@ -1,15 +1,15 @@
+"use strict";
+
 var productcatControllers = angular.module('productcatControllers', []);
 
 //Main Controller
-productcatControllers.controller('MainCtrl', function($scope, $location, $rootScope, $http, $location, Auth, Session) {
+productcatControllers.controller('MainCtrl', function($scope, $location, $rootScope, $http, Auth, Session) {
 	Auth.islogged();
-	Session.destroy();
 	$rootScope.user=Session;
-
 });
 
 //Product List Controller
-productcatControllers.controller('ProductListCtrl', function ($scope, $http) {
+productcatControllers.controller('ProductListCtrl', function($scope, $http) {
 	$http.get('/db/products').success(function(data){
 		$scope.products=data;
 	});
@@ -22,7 +22,7 @@ productcatControllers.controller('CartController',
 			$scope.product=data[0];
 		});*/
 		$scope.addProductToCart=function(o){
-			$this=$(o.target);
+			var $this=$(o.target);
 			var pid=$this.data("pid");
 			var quant=parseInt($("#quantity-"+pid).val());
 
@@ -132,41 +132,44 @@ productcatControllers.controller('CartCtrl',
 );
 
 //Login Controller
-productcatControllers.controller('LoginCtrl', ['$scope','Auth', function ($scope,Auth) {
-	$scope.msgtxt	= '';
-	$scope.email	= $('#email').val();
-	$scope.password	= $('#password').val();
+productcatControllers.controller('LoginCtrl', ['$scope','Auth', function($scope,Auth) {
+	$scope.login 	= {};
+	$scope.register = {};
+	$scope.loginButtonText='login';
 
-	
-	
+	$scope.submitLoginButtonHandler=function($event){
+		$event.preventDefault();
+		Auth.login($scope.login,function(){
+			$scope.updateLoginButtonText();
+		});
+	};
+
+	$scope.logoutButtonHandler=function($event){
+		Auth.logout();
+	};
+
 	$scope.loginButtonHandler=function($event){
 		$event.preventDefault();
-		var input={};
-		input.email		= $('#email').val();
-		input.password	= $('#password').val();
+		$scope.updateLoginButtonText();
+		$('#login-form').slideToggle(200);
+	};
 
-		Auth.login(input,$scope); //call login service
+	$scope.updateLoginButtonText=function(){
+		$scope.loginButtonText = ($scope.loginButtonText.match('ocultar'))? 'login' : 'ocultar login';
 	};
 
 }]);
 
-/*//Login Controller
-productcatControllers.controller('LoginCtrl', 
-	['$scope', '$routeParams', '$http', '$location', function($scope, $routeParams, $http, $location) {
+//Register Controller
+productcatControllers.controller('RegisterCtrl', 
+	['$scope', '$routeParams', '$http', '$location','Auth', function($scope, $routeParams, $http, $location, Auth) {
+		$scope.register={};
 
-		$scope.loginButtonHandler=function($event){
+		$scope.submitRegisterButtonHandler=function($event){
 			$event.preventDefault();
-			
-			var input={};
-			input.email		= $('#email').val();
-			input.password	= $('#password').val();
-
-			$http.post('/db/login',input).success(function(data){
-				$('.user').html('Bienvenido '+data.name);
-				$location.url('/');
-			});
+			Auth.register($scope.register);
 		}
 		
 	}]
-);*/
+);
 

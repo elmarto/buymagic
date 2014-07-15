@@ -22,9 +22,9 @@ productcatApp.config(['$routeProvider',
 				templateUrl: 'partials/checkout.html',
 				controller: 'CartCtrl'
 			}).
-			when('/login', {
-				templateUrl: 'partials/login.html',
-				controller: 'LoginCtrl'
+			when('/register', {
+				templateUrl: 'partials/register.html',
+				controller: 'RegisterCtrl'
 			}).
 			otherwise({
 				redirectTo: '/products'
