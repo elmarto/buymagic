@@ -3,8 +3,18 @@
  	width:auto;
 }
 header {
-    padding: 2px;
+    
 }
+
+.user .login-section #login-form .xs-row{
+	margin-top: 5px;
+}
+.user .login-section #login-form .submit-button{
+	width:100%;
+	margin-top: 10px;
+}
+
+
 .main section{
     float:left;
     width:100%;
@@ -68,6 +78,10 @@ header {
 .main section article .price .add{
 	padding:10px;
 	
+}
+
+.main section article .cart-preview .cart-products{
+	font-size: 11px;
 }
 
 .resumeTable{

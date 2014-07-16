@@ -19,7 +19,7 @@
 		</table>
 		<span ng-controller="CartController">
 			<input class="quantity" id="quantity-{{product.id}}" value="1" min="1" max="99" type="number" />
-			<a data-pid="{{product.id}}" class="add" ng-click="addProductToCart($event)">Agregar</a>
+			<a data-pid="{{product.id}}" class="btn add" ng-click="addProductToCart($event)">Agregar</a>
 		</span>
 	</div>
 	<div class="block description">

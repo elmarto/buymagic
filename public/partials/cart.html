@@ -17,7 +17,7 @@
 				</td>
 				<td ng-bind="product.price_unit">${{product.price_unit}}</td>
 				<td ng-model="product.price_quantity">${{product.price_quantity}}</td>
-				<td>Remover</td>
+				<td>R</td>
 			</tr>
 		</table>
 		<div class="cart-additionals">
@@ -43,7 +43,7 @@
 			<h3>TOTAL <span>${{total}}</span></h3>
 		</div>
 
-		<a href="#/checkout">checkout</a>
+		<a href="#/checkout" class="btn btn-block btn-warning">Checkout</a>
 	</div>
 
 	<h3 ng-if="products.length <= 0">EL CARRITO ESTÁ VACÍO</h3>

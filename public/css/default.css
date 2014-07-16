@@ -4,7 +4,7 @@
 	margin:0;
 	padding:0;
 }
-a, a:visited{
+a{
 	color:#FF9933;
 	cursor:pointer;
 }
@@ -44,16 +44,24 @@ header .logo{
 	margin:0 10px 10px 0;
 	display: block;
 }
+
+.user .login-section .login-form .submit-button{
+	
+}
+
 .fixedMenu{
-	background: #f2bc1d; /* Old browsers */
-	background: -moz-linear-gradient(top, #f2bc1d 0%, #ed9017 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2bc1d), color-stop(100%,#ed9017)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* IE10+ */
-	background: linear-gradient(top, #f2bc1d 0%,#ed9017 100%); /* W3C */
-	border-radius: 0 0 5px 5px;
-	box-shadow: 0px 1px 2px #888;
+	background: #ed9017; /* Old browsers */
+	/*background: -moz-linear-gradient(top, #f2bc1d 0%, #ed9017 100%); 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2bc1d), color-stop(100%,#ed9017)); 
+	background: -webkit-linear-gradient(top, #f2bc1d 0%,#ed9017 100%);
+	background: -o-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); 
+	background: -ms-linear-gradient(top, #f2bc1d 0%,#ed9017 100%); 
+	background: linear-gradient(top, #f2bc1d 0%,#ed9017 100%); 
+	*/
+	box-shadow: 1px 1px 2px black;
+	box-sizing: initial;
+	-webkit-box-sizing: initial; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: initial;    /* Firefox, other Gecko */
 	-moz-box-shadow: 0px 1px 2px #888;
 	-webkit-box-shadow: 0px 1px 2px #888;
 	height: 23px;
@@ -68,6 +76,8 @@ header .logo{
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	-ms-transition: all 0.2s ease-in-out;
+	z-index: 9999;
+	/*border-radius: 0 0 5px 5px;*/
 }
 .fixedMenu .cart-cant{
 	display: block;
@@ -259,20 +269,20 @@ header .logo{
 	width:98%;
 	margin:2%;
 }
-
+/*
 .main section article .cart-preview .cart-products tr:nth-child(even){
 	background-color:#FEFEFE;
 }
 .main section article .cart-preview .cart-products tr:nth-child(odd){
 	background-color:#DEDEDE;
-}
+}*/
 .main section article .cart-preview .cart-products tr:nth-child(1){
-	background-color:black;
-	color:white;
+	color:gray;
 }
 .main section article .cart-preview .cart-products tr th,
 .main section article .cart-preview .cart-products tr td{
 	padding:6px 2%;
+	vertical-align: middle;
 }
 
 .main section article .cart-preview .cart-products tr th:nth-child(1),

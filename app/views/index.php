@@ -32,17 +32,17 @@
 					<form action="/db/login" method="POST" ng-if="!user.id" id="login-form" style="display:none;">
 						<hr />
 						<div class="form-group row">
-							<div class="col-sm-4">
+							<div class="xs-row col-sm-4">
 								<input class="form-control" type="text" name="email" id="email" placeholder="Email" ng-model="login.email" />
 							</div>
-							<div class="col-sm-4">
+							<div class="xs-row col-sm-4">
 								<input class="form-control" type="password" id="password" placeholder="Password" ng-model="login.password" />
 							</div>
-							<div class="col-sm-1">
+							<div class="xs-row col-sm-1">
 								<input type="submit" id="submit" class="btn btn-warning submit-button" ng-click="submitLoginButtonHandler($event)" value="Login" />
 							</div>
-							<div class="col-sm-3">
-								<a class="password-recovery-link" href="#/password-recovery">Olvidé la contraseña</a>
+							<div class="xs-row col-sm-3">
+								<a class="password-recovery-link" href="#/password-recovery">Olvidé mi contraseña</a>
 							</div>
 						</div>
 						
