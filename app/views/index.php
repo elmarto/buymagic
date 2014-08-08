@@ -96,12 +96,18 @@
 		</footer>
 	</div>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.min.js"></script>
+
 	<script src="js/app.js"></script>
 	<script src="js/controllers.js"></script>
 	<script src="js/auth.js"></script>
+
+	<script src='//maps.googleapis.com/maps/api/js?libraries=places&sensor=false'></script>
+	<script src="js/vendor/lodash/dist/lodash.min.js"></script>
+	<script src="js/vendor/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
 	<script>
 		/*var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
