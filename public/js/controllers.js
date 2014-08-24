@@ -126,7 +126,6 @@ productcatControllers.controller('CartCtrl',
 				var street = $scope.address.street,
 					number = $scope.address.number;
 
-				//console.log($scope.address.google);
 
 				//if (typeof street != "undefined" && typeof number != "undefined" && (street+number).length > 4){
 					console.log(street + ' ' + number);
@@ -135,7 +134,7 @@ productcatControllers.controller('CartCtrl',
 						method : 'get',
 						url : 'http://maps.googleapis.com/maps/api/geocode/json',
 						params : {
-							address : street + ' ' + number + ', Buenos Aires, Ciudad Autonoma de Buenos Aires, Argentina',
+							address : $scope.address.google,
 							sensor : false
 						}
 					};
@@ -143,13 +142,34 @@ productcatControllers.controller('CartCtrl',
 					$http(config).then(function (res){
 						if(res.status==200){
 
-							var results  = res.data.results[0],
-								location = results.geometry.location;
+							var results  		= res.data.results[0],
+								location 		= results.geometry.location;
 
-							if ( typeof (results.address_components[2]) != "undefined" && results.address_components[2].types[0] === "neighborhood")
-								$scope.address.neighborhood = results.address_components[2].long_name;
-							else
-								$scope.address.neighborhood = "";
+							$scope.address.street 		= "";
+							$scope.address.number 		= "";
+							$scope.address.neighborhood = "";
+							$scope.address.locality 	= "";
+
+							results.address_components.forEach( function ( component ){
+								console.log(component);
+								component.types.forEach( function ( type ){
+									if (type === "route") {
+										$scope.address.street = component.long_name;
+									}
+
+									if (type === "street_number") {
+										$scope.address.number = component.long_name;
+									}
+
+									if (type === "neighborhood") {
+										$scope.address.neighborhood = component.long_name;
+									}
+
+									if (type === "locality") {
+										$scope.address.locality = component.long_name;
+									}
+								})
+							});
 
 							$scope.map.marker.coords = {latitude: location.lat, longitude: location.lng};
 							$scope.map.control.refresh({latitude: location.lat, longitude: location.lng});
