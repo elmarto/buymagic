@@ -327,6 +327,12 @@ header .logo{
 	width: 100%;
 }
 
+.main section article .cart-preview .angular-google-map-container {
+	height: 200px;
+	margin-bottom: 10px 
+}
+
+
 .main aside{
 	
 	float: right;

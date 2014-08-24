@@ -92,7 +92,75 @@ productcatControllers.controller('CartCtrl',
 			$scope.subtotal=cart.subtotal;
 			$scope.total=cart.subtotal;
 
-			$scope.updateQuantityPrices=function($event){
+			$scope.address = {};
+
+			$scope.gPlace;
+
+
+
+			$scope.map = {
+			    center: {
+			        latitude: 0,
+			        longitude: 0
+			    },
+			    zoom: 16,
+			    control: {},
+			    events: {
+			        tilesloaded: function (map) {
+			            $scope.$apply(function () {
+			                $scope.mapInstance = map;			
+			            });
+			        }
+			    },
+			    marker:{
+			    	idKey: 0,
+			    	coords:{
+			    		latitude: 0,
+			        	longitude: 0
+			    	}
+			    }
+			};
+
+			//Gets the coords for the address given and refreshes the gmap
+			$scope.mapAdress = function (){
+				var street = $scope.address.street,
+					number = $scope.address.number;
+
+				//console.log($scope.address.google);
+
+				//if (typeof street != "undefined" && typeof number != "undefined" && (street+number).length > 4){
+					console.log(street + ' ' + number);
+
+					var config = {	
+						method : 'get',
+						url : 'http://maps.googleapis.com/maps/api/geocode/json',
+						params : {
+							address : street + ' ' + number + ', Buenos Aires, Ciudad Autonoma de Buenos Aires, Argentina',
+							sensor : false
+						}
+					};
+
+					$http(config).then(function (res){
+						if(res.status==200){
+
+							var results  = res.data.results[0],
+								location = results.geometry.location;
+
+							if ( typeof (results.address_components[2]) != "undefined" && results.address_components[2].types[0] === "neighborhood")
+								$scope.address.neighborhood = results.address_components[2].long_name;
+							else
+								$scope.address.neighborhood = "";
+
+							$scope.map.marker.coords = {latitude: location.lat, longitude: location.lng};
+							$scope.map.control.refresh({latitude: location.lat, longitude: location.lng});
+							$('.map-wrapper').slideDown(200);
+						}
+					});
+				//}
+			};
+
+
+			$scope.updateQuantityPrices=function ($event){
 				var pid=$event.product.id;
 				var quant=parseInt($("#quantity-"+pid).val());
 
@@ -117,7 +185,13 @@ productcatControllers.controller('CartCtrl',
 				$http.get('/checkout').success(function(mp){
 					window.top.location.href=mp.sandbox_init_point;
 				});
-			}
+			};
+
+
+
+
+
+
 		});
 		
 	}]

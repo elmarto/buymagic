@@ -1,0 +1,10 @@
+{
+  "name": "BuyMagic",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "1.7.1",
+    "angularjs": null,
+    "angular-google-maps": "~1.2.0",
+    "angular-load": "~0.1.2"
+  }
+}
