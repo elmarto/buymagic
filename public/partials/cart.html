@@ -36,46 +36,66 @@
 
 			<h3 class="page-header">Dirección de Envíos</h3>
 
+			<div class="form-group row shipping-preview" ng-if="address.street">
+				<div class="col-sm-2">
+					<button class="btn btn-default">Editar</button>
+				</div>
+				<div class="col-sm-10">
+					<div>
+						<span class="">
+							{{address.street}} {{address.number}}
+						</span> 
+						<span ng-if="address.floor != null && address.floor != '' ">
+							 Piso {{address.floor}}
+						</span>
+						<span ng-if="address.apt != null && address.apt != '' ">
+							 Dpto. {{address.apt}}
+						</span>
+					</div>
+					<div>
+						<span ng-if="address.neighborhood != null && address.neighborhood != ''">{{address.neighborhood}}, </span>
+						<span ng-if="address.locality != null && address.locality != '' ">{{address.locality}}</span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group row shipping-preview" ng-if="!address.street">
+				<div class="col-sm-12">
+					<button class="btn btn-default">Agregar Dirección de Envío</button>
+				</div>
+				
+			</div>
 
-			<div class="form-group row">
+
+			<div class="form-group row shipping-form">
 				<div class="col-sm-6">
 					<div class="row">
-						<div class="col-sm-12">
+						<div class="col-sm-8">
 							<input type="text" googleplace id="address-google" ng-model="address.google" ng-change="mapAdress()" class="form-control" placeholder="Dirección" />
 						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-sm-8">
-							<input type="text" name="address-street" id="address-street" ng-model="address.street" class="form-control" placeholder="Calle" />
+						<div class="col-sm-2 col-xs-6">
+							<input type="text" name="address-floor" id="address-floor" ng-model="address.floor" class="form-control" placeholder="Piso" />
 						</div>
-						<div class="col-sm-4">
-							<input type="text" name="address-number" id="address-number" ng-model="address.number" class="form-control" placeholder="Altura" />
+						<div class="col-sm-2 col-xs-6">
+							<input type="text" name="address-apt" id="address-apt" ng-model="address.apt" class="form-control" placeholder="Dpto" />
 						</div>
 					</div>
 
+
 					<div class="row">
-						<div class="col-sm-4">
-							<input type="text" name="address-apt" id="address-apt" ng-model="address.apt" class="form-control" placeholder="Dpto." />
-						</div>
-						<div class="col-sm-8">
-							<select class="form-control">
-								<option>Capital Federal</option>
-							</select>
+						<div class="col-sm-12">
+							<span>
+								Verifica que tu dirección se muestre correctamente en el mapa.<br>
+								<i>Ej: Av. Rivadavia 3231, Buenos Aires, Argentina</i>
+							</span>
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-sm-12">
-							<input type="text" name="neighborhood" id="adress-neighborhood" ng-model="address.neighborhood" class="form-control" placeholder="Barrio" disabled />
+							<button class="btn btn-block btn-success" ng-click="confirmShippingAddressHandler()" >Confirmar Dirección</button>
 						</div>
 					</div>
 
-					<div class="row">
-						<div class="col-sm-12">
-							<button class="btn btn-block btn-success">Confirmar Dirección</button>
-						</div>
-					</div>
 
 					
 				</div>
@@ -91,16 +111,6 @@
 				</div>
 				
 			</div>
-			<!--div class="form-group row map-wrapper" style="display:none;">
-				<div class="col-sm-8">
-					<google-map center="map.center" zoom="map.zoom" pan="true" draggable="true" control="map.control">
-						<marker idKey="map.marker.idKey" coords="map.marker.coords"></marker>
-					</google-map>
-				</div>
-				<div class="col-sm-4">
-					
-				</div>
-			</div-->
 			<hr>
 			<div class="form-group row">
 				<div class="col-sm-12">
@@ -111,7 +121,7 @@
 						</tr>
 						<tr>
 							<td>Envío</td>
-							<td>$0.00</td>
+							<td>${{shipping}}</td>
 						</tr>
 					</table>
 

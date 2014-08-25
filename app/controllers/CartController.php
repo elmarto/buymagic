@@ -3,15 +3,15 @@
 class CartController extends \BaseController {
 
 	public function set(){
-		$storedProducts=Session::get('user.cart');
+		$storedProducts	= Session::get('user.cart');
 
-		$pid=Input::get('pid');
-		$quantity=Input::get('quantity');
-		$action=Input::get('action');
+		$pid			= Input::get('pid');
+		$quantity 		= Input::get('quantity');
+		$action 		= Input::get('action');
 
 		$newProduct = array(
-		    "pid" => $pid,
-		    "quantity" => $quantity
+		    "pid" 		=> $pid,
+		    "quantity" 	=> $quantity
 		);
 
 		$found=false;
@@ -43,11 +43,12 @@ class CartController extends \BaseController {
 	}
 
 	public function get(){	
-		$storedProducts=Session::get('user.cart');
-		$ids=array();
-		$cart=array(
-			'products'=> array(),
-			'subtotal'=> 0
+		$storedProducts	=Session::get('user.cart');
+		$ids 			= array();
+
+		$cart = array(
+			'products'	=> array(),
+			'subtotal'	=> 0
 		);
 
 		if(isset($storedProducts)){
@@ -62,15 +63,16 @@ class CartController extends \BaseController {
 
 				$price_unit = ProductHelpers::getPrice($storedProducts[$i]['quantity'],$product->prices);
 				$element = (object)array(
-					'id' => $product->id,
-					'codename' => $product->codename,
-					'name'=> $product->name,
-					'type'=> $product->type,
-					'stock'=> $product->stock,
-					'quantity'=> (int) $storedProducts[$i]['quantity'],
-					'price_unit'=> $price_unit,
+					'id' 			=> $product->id,
+					'codename' 		=> $product->codename,
+					'name'			=> $product->name,
+					'type'			=> $product->type,
+					'stock'			=> $product->stock,
+					'quantity'		=> (int) $storedProducts[$i]['quantity'],
+					'price_unit'	=> $price_unit,
 					'price_quantity'=> $price_unit*$storedProducts[$i]['quantity']
 				);
+
 				$cart['subtotal']+=$element->price_quantity;
 				array_push($cart['products'], $element);
 			}
