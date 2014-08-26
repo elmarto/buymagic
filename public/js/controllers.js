@@ -88,15 +88,13 @@ productcatControllers.controller('ProductDetailCtrl',
 productcatControllers.controller('CartCtrl', 
 	['$scope', '$http', function($scope, $http) {
 		$http.get('/cart').success(function(cart){
-			$scope.products=cart.products;
-			$scope.subtotal=cart.subtotal;
-			$scope.total=cart.subtotal;
+			$scope.products	= cart.products;
+			$scope.shipping	= cart.shipping || 0;
+			$scope.subtotal	= cart.subtotal;
+			$scope.total	= cart.total;
 
-			$scope.address = {};
-
+			$scope.address	= {};
 			$scope.gPlace;
-
-
 
 			$scope.map = {
 			    center: {
@@ -123,60 +121,57 @@ productcatControllers.controller('CartCtrl',
 
 			//Gets the coords for the address given and refreshes the gmap
 			$scope.mapAdress = function (){
-				var street = $scope.address.street,
-					number = $scope.address.number;
 
+				var config = {	
+					method : 'get',
+					url : 'http://maps.googleapis.com/maps/api/geocode/json',
+					params : {
+						address : $scope.address.google,
+						sensor : false
+					}
+				};
 
-				//if (typeof street != "undefined" && typeof number != "undefined" && (street+number).length > 4){
-					console.log(street + ' ' + number);
+				$http(config).then(function (res){
+					if(res.status==200){
 
-					var config = {	
-						method : 'get',
-						url : 'http://maps.googleapis.com/maps/api/geocode/json',
-						params : {
-							address : $scope.address.google,
-							sensor : false
-						}
-					};
+						var results  		= res.data.results[0],
+							location 		= results.geometry.location;
 
-					$http(config).then(function (res){
-						if(res.status==200){
+						$scope.address.street 		= "";
+						$scope.address.number 		= "";
+						$scope.address.neighborhood = "";
+						$scope.address.locality 	= "";
 
-							var results  		= res.data.results[0],
-								location 		= results.geometry.location;
+						results.address_components.forEach( function ( component ){
+							console.log(component);
+							component.types.forEach( function ( type ){
+								if (type === "route") {
+									$scope.address.street = component.long_name;
+								}
 
-							$scope.address.street 		= "";
-							$scope.address.number 		= "";
-							$scope.address.neighborhood = "";
-							$scope.address.locality 	= "";
+								if (type === "street_number") {
+									$scope.address.number = component.long_name;
+								}
 
-							results.address_components.forEach( function ( component ){
-								console.log(component);
-								component.types.forEach( function ( type ){
-									if (type === "route") {
-										$scope.address.street = component.long_name;
-									}
+								if (type === "neighborhood") {
+									$scope.address.neighborhood = component.long_name;
+								}
 
-									if (type === "street_number") {
-										$scope.address.number = component.long_name;
-									}
+								if (type === "locality") {
+									$scope.address.locality = component.long_name;
+								}
 
-									if (type === "neighborhood") {
-										$scope.address.neighborhood = component.long_name;
-									}
+								if (type === "administrative_area_level_1") {
+									$scope.address.locality += ', '+component.long_name;
+								}
+							})
+						});
 
-									if (type === "locality") {
-										$scope.address.locality = component.long_name;
-									}
-								})
-							});
-
-							$scope.map.marker.coords = {latitude: location.lat, longitude: location.lng};
-							$scope.map.control.refresh({latitude: location.lat, longitude: location.lng});
-							$('.map-wrapper').slideDown(200);
-						}
-					});
-				//}
+						$scope.map.marker.coords = {latitude: location.lat, longitude: location.lng};
+						$scope.map.control.refresh({latitude: location.lat, longitude: location.lng});
+						$('.map-wrapper').slideDown(200);
+					}
+				});
 			};
 
 
@@ -190,15 +185,28 @@ productcatControllers.controller('CartCtrl',
 					data: { pid: pid, quantity: quant, action:'set' },
 					success: function(cart) {
 						$scope.$apply(function(){
-							$scope.products=cart.products;
-							$scope.subtotal=cart.subtotal;
-							$scope.total=cart.subtotal;
+							$scope.products	= cart.products;
+							$scope.subtotal = cart.subtotal;
+							$scope.total	= cart.total;
 						});
 					},
 					error:function(){
 						$("#cart-cant").html(parseFloat($("#cart-cant").html())-quant);
 					}
 				});
+			};
+
+			$scope.getShippingPrice=function(neighborhood){
+				/*$http.get('/db/shipping', neighborhood).success(function(res){
+					console.log(res);
+				});*/
+				$scope.shipping = 20;
+				return 20;
+			};
+
+			$scope.confirmShippingAddressHandler=function(neighborhood){
+				$('.shipping-form').slideUp(200);
+				$scope.getShippingPrice();
 			};
 
 			$scope.pay=function($event){
